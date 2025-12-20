@@ -2,10 +2,7 @@ package com.coursivo.coursivo_backend.controller;
 
 import com.coursivo.coursivo_backend.model.User;
 import com.coursivo.coursivo_backend.service.UserService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/")
@@ -23,4 +20,8 @@ public class UserController {
     }
 
 
+    @PatchMapping("/users/{id}")
+    public User updateUser(@PathVariable Long id, @RequestBody User user) {
+        return this.userService.updateUser(id, user);
+    }
 }
