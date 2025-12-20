@@ -24,4 +24,9 @@ public class UserController {
     public User updateUser(@PathVariable Long id, @RequestBody User user) {
         return this.userService.updateUser(id, user);
     }
+
+    @GetMapping("/users/{id}")
+    public User getUserById(@PathVariable Long id) {
+        return this.userService.getUserById(id);
+    }
 }
