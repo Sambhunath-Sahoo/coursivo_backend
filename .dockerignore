@@ -1,0 +1,35 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.idea
+*.iml
+.vscode
+*.swp
+*.swo
+
+# Build artifacts (we rebuild inside Docker)
+target/
+
+# Documentation
+*.md
+LICENSE
+documents/
+
+# SQL files (if not needed at runtime)
+*.sql
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
