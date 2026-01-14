@@ -1,0 +1,14 @@
+spring.application.name=
+
+# DevTools Auto Restart on Code Change
+spring.devtools.restart.enabled=
+spring.devtools.livereload.enabled=
+
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+
+# JPA
+spring.jpa.hibernate.ddl-auto=
+spring.jpa.show-sql=
+

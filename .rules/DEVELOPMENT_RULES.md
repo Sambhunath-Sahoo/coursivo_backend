@@ -1,95 +1,68 @@
-📘 DEVELOPMENT_RULES.md
+# Coursivo — Development Rules
 
-Coursivo – Education Platform
-React + Spring Boot + Neon (PostgreSQL)
+**Stack**: React + Spring Boot + Neon (PostgreSQL)
 
-1️⃣ Project Principles (Non-Negotiable)
+## Project principles (non-negotiable)
 
-Build feature-first, not framework-first
+- Build feature-first, not framework-first
+- Prefer clarity over cleverness
+- Every feature must be:
+  - Secure
+  - Testable
+  - Explainable in interviews
+- Backend is the source of truth
+- Frontend never trusts itself for:
+  - Auth
+  - Progress
+  - Role validation
 
-Prefer clarity over cleverness
+## Tech stack rules
 
-Every feature must be:
+### Frontend
 
-Secure
+- React (Vite / CRA)
+- TypeScript (preferred)
+- Axios for API calls
+- React Router for routing
+- React Query for server state
+- Context only for auth/session
 
-Testable
+### Backend
 
-Explainable in interviews
+- Spring Boot (REST)
+- Spring Security + JWT
+- Spring Data JPA
+- Neon (PostgreSQL)
+- Lombok allowed
 
-Backend is the source of truth
+### Database
 
-Frontend never trusts itself for:
+- Neon (Postgres)
+- Use UUID or BIGINT IDs
+- DB constraints > app checks
 
-Auth
+## Database rules (Neon)
 
-Progress
+- All tables must have:
+  - id
+  - created_at
+- Use snake_case in DB
+- Use camelCase in Java & React
+- Foreign keys are mandatory
+- Never store derived values unless needed (except progress)
 
-Role validation
+**Required tables**
 
-2️⃣ Tech Stack Rules
-Frontend
+- users
+- courses
+- lessons
+- enrollments
 
-React (Vite / CRA)
+## Backend architecture rules (Spring Boot)
 
-TypeScript (preferred)
+### Package structure
 
-Axios for API calls
-
-React Router for routing
-
-React Query for server state
-
-Context only for auth/session
-
-Backend
-
-Spring Boot (REST)
-
-Spring Security + JWT
-
-Spring Data JPA
-
-Neon (PostgreSQL)
-
-Lombok allowed
-
-Database
-
-Neon (Postgres)
-
-Use UUID or BIGINT IDs
-
-DB constraints > app checks
-
-3️⃣ Database Rules (Neon)
-
-All tables must have:
-
-id
-
-created_at
-
-Use snake_case in DB
-
-Use camelCase in Java & React
-
-Foreign keys are mandatory
-
-Never store derived values unless needed (except progress)
-
-Required Tables
-
-users
-
-courses
-
-lessons
-
-enrollments
-
-4️⃣ Backend Architecture Rules (Spring Boot)
-Package Structure
+```text
 controller/
 service/
 repository/
@@ -97,126 +70,90 @@ entity/
 dto/
 security/
 exception/
+```
 
-Rules
+### Rules
 
-Controllers:
+- **Controllers**
+  - Handle HTTP only
+  - No business logic
+- **Services**
+  - All business logic lives here
+- **Repositories**
+  - JPA only, no logic
+- **DTOs**
+  - Never expose entities directly
+- **Entities**
+  - No API annotations
 
-Handle HTTP only
+## API design rules
 
-No business logic
+- RESTful URLs only
+- Use nouns, not verbs
+- Consistent response structure
 
-Services:
+**Example**
 
-All business logic lives here
-
-Repositories:
-
-JPA only, no logic
-
-DTOs:
-
-Never expose entities directly
-
-Entities:
-
-No API annotations
-
-5️⃣ API Design Rules
-
-RESTful URLs only
-
-Use nouns, not verbs
-
-Consistent response structure
-
-Example
+```json
 {
   "data": {},
   "message": "Success"
 }
+```
 
-Status Codes
+### Status codes
 
-200 → Success
+- 200 → Success
+- 201 → Created
+- 400 → Bad Request
+- 401 → Unauthorized
+- 403 → Forbidden
+- 404 → Not Found
+- 409 → Conflict
 
-201 → Created
+## Authentication & security rules
 
-400 → Bad Request
+- JWT-based authentication only
+- Passwords must be BCrypt hashed
+- Role-based access:
+  - STUDENT
+  - EDUCATOR
+- Use:
+  - @PreAuthorize
+  - Security filters
+- Never trust role from frontend
 
-401 → Unauthorized
+## Educator flow rules
 
-403 → Forbidden
+- Educator can:
+  - Create courses
+  - Add lessons
+  - Publish course
+- Only course owner can modify it
+- Draft courses are invisible to students
 
-404 → Not Found
+## Student flow rules
 
-409 → Conflict
+- Student can:
+  - View published courses
+  - Enroll once
+  - Track progress
+- Enrollment is mandatory before learning
+- Progress is updated only by backend
 
-6️⃣ Authentication & Security Rules
+## Progress tracking rules
 
-JWT-based authentication only
+- Progress stored in enrollments
+- Backend calculates:
+  - \(progress = completedLessons * 100 / totalLessons\)
+- Frontend only displays progress
+- Lesson completion is idempotent
 
-Passwords must be:
+## Frontend architecture rules (React)
 
-BCrypt hashed
+### Folder structure
 
-Role-based access:
-
-STUDENT
-
-EDUCATOR
-
-Use:
-
-@PreAuthorize
-
-Security filters
-
-Never trust role from frontend
-
-7️⃣ Educator Flow Rules
-
-Educator can:
-
-Create courses
-
-Add lessons
-
-Publish course
-
-Only course owner can modify it
-
-Draft courses are invisible to students
-
-8️⃣ Student Flow Rules
-
-Student can:
-
-View published courses
-
-Enroll once
-
-Track progress
-
-Enrollment is mandatory before learning
-
-Progress is updated only by backend
-
-9️⃣ Progress Tracking Rules
-
-Progress stored in enrollments
-
-Backend calculates:
-
-progress = completedLessons * 100 / totalLessons
-
-
-Frontend only displays progress
-
-Lesson completion is idempotent
-
-🔟 Frontend Architecture Rules (React)
-Folder Structure
+```text
 src/
   api/
   auth/
@@ -225,68 +162,55 @@ src/
   routes/
   hooks/
   utils/
+```
 
-Rules
+### Rules
 
-Pages = route-level components
+- Pages = route-level components
+- Components = reusable UI
+- API logic isolated in /api
+- No API calls inside components directly
+- Use loading, error, empty states everywhere
 
-Components = reusable UI
+## State management rules
 
-API logic isolated in /api
+- Auth state → Context
+- Server state → React Query
+- Local UI state → useState
+- Never duplicate backend data in multiple places
 
-No API calls inside components directly
+## Error handling rules
 
-Use loading, error, empty states everywhere
+### Backend
 
-1️⃣1️⃣ State Management Rules
+- Global exception handler
+- Meaningful error messages
+- Log errors, don’t swallow them
 
-Auth state → Context
+### Frontend
 
-Server state → React Query
+- Show user-friendly messages
+- Handle:
+  - Loading
+  - Empty
+  - Error states
 
-Local UI state → useState
+## Naming conventions
 
-Never duplicate backend data in multiple places
+### Java
 
-1️⃣2️⃣ Error Handling Rules
-Backend
+- Classes → PascalCase
+- Methods → camelCase
 
-Global exception handler
+### React
 
-Meaningful error messages
+- Components → PascalCase
+- Hooks → useSomething
 
-Log errors, don’t swallow them
+### APIs
 
-Frontend
+- kebab-case URLs
 
-Show user-friendly messages
+### DB
 
-Handle:
-
-Loading
-
-Empty
-
-Error states
-
-1️⃣3️⃣ Naming Conventions
-
-Java:
-
-Classes → PascalCase
-
-Methods → camelCase
-
-React:
-
-Components → PascalCase
-
-Hooks → useSomething
-
-APIs:
-
-kebab-case URLs
-
-DB:
-
-snake_case
+- snake_case

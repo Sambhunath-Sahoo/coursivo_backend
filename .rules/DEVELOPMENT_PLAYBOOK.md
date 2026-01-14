@@ -1,338 +1,263 @@
-PROJECT_PLAYBOOK.md
+# Coursivo — Education Platform
 
-Coursivo – Education Platform
-React + Spring Boot + Neon (PostgreSQL)
+**Stack**: React + Spring Boot + Neon (PostgreSQL)
 
-1️⃣ Project Goal
+## Project goal
 
 Build a minimal yet production-grade education platform supporting:
 
-Role-based authentication
-
-Educator course creation
-
-Student learning flow with progress tracking
+- Role-based authentication
+- Educator course creation
+- Student learning flow with progress tracking
 
 Focus on end-to-end feature ownership, not feature volume.
 
-2️⃣ Feature Scope (Locked)
-Included
+## Feature scope (locked)
 
-Auth (Student / Educator)
+### Included
 
-Educator:
+- **Auth**: Student / Educator
+- **Educator**
+  - Create course
+  - Add lessons
+  - Publish course
+- **Student**
+  - View courses
+  - Enroll
+  - Learn lessons
+  - Track progress
 
-Create course
+### Excluded (intentionally)
 
-Add lessons
+- Payments
+- AI features
+- Admin panel
 
-Publish course
+## Step-by-step development plan
 
-Student:
+### Step 0 — Planning (mandatory)
 
-View courses
+**Tasks**
 
-Enroll
+- [x] Finalize entities
+- [x] Finalize API contracts
+- [x] Lock tech stack
 
-Learn lessons
+**Entities**
 
-Track progress
+- User
+- Course
+- Lesson
+- Enrollment
 
-Excluded (Intentionally)
+**Rule**
 
-Payments
+- Do not write code before this step is done.
 
-AI features
+### Step 1 — Backend setup (Day 1)
 
-Admin panel
+**Tasks**
 
-3️⃣ Step-by-Step Development Plan
-STEP 0 — Planning (Mandatory)
+- Create Spring Boot project
+- Add dependencies:
+  - Web
+  - Security
+  - JPA
+  - Validation
+  - PostgreSQL
+  - Lombok
+- Configure Neon DB connection
+- Enable JPA + Hibernate
 
-✔ Finalize entities
-✔ Finalize API contracts
-✔ Lock tech stack
+**Deliverables**
 
-Entities
+- App runs successfully
+- Database connection verified
 
-User
+### Step 2 — Database & entities (Day 1–2)
 
-Course
+**Tasks**
 
-Lesson
+- Create JPA entities:
+  - User
+  - Course
+  - Lesson
+  - Enrollment
+- Define relationships
+- Add DB constraints
+- Enable auto-migration (Hibernate)
 
-Enrollment
+**Rules**
 
-Rule:
-Do not write code before this step is done.
+- Use snake_case in DB
+- Use camelCase in Java
 
-STEP 1 — Backend Setup (Day 1)
-Tasks
+**Deliverables**
 
-Create Spring Boot project
+- Tables created in Neon
+- Relationships verified
 
-Add dependencies:
+### Step 3 — Authentication & security (Day 2–3)
 
-Web
+**Tasks**
 
-Security
+- Implement:
+  - Signup API
+  - Login API
+- Add:
+  - BCrypt password hashing
+  - JWT generation & validation
+- Configure Spring Security:
+  - Stateless sessions
+  - Role-based access
+  - Protect APIs
 
-JPA
+**Deliverables**
 
-Validation
+- JWT auth working
+- Role-based access enforced
 
-PostgreSQL
+### Step 4 — Educator APIs (Day 4–5)
 
-Lombok
+**APIs to implement**
 
-Configure Neon DB connection
+- Create course
+- Get educator courses
+- Add lesson
+- Publish course
 
-Enable JPA + Hibernate
+**Rules**
 
-Deliverable
+- Only EDUCATOR can access
+- Only course owner can modify
+- Draft courses invisible to students
 
-App runs successfully
+**Deliverables**
 
-Database connection verified
+- Educator flow usable via Postman
 
-STEP 2 — Database & Entities (Day 1–2)
-Tasks
+### Step 5 — Student APIs (Day 6–7)
 
-Create JPA entities:
+**APIs to implement**
 
-User
+- List published courses
+- Course details
+- Enroll in course
+- Get learning content
+- Mark lesson completed
+- Get student dashboard
 
-Course
+**Rules**
 
-Lesson
+- Prevent duplicate enrollment
+- Enrollment required before learning
+- Backend calculates progress
 
-Enrollment
+**Deliverables**
 
-Define relationships
+- Student flow functional via APIs
 
-Add DB constraints
+### Step 6 — Frontend setup (Day 1 parallel)
 
-Enable auto-migration (Hibernate)
+**Tasks**
 
-Rule
+- Create React project
+- Setup:
+  - React Router
+  - Axios
+  - React Query
+  - Auth context setup
+  - API layer abstraction
 
-Use snake_case in DB
+**Deliverables**
 
-Use camelCase in Java
+- App skeleton ready
 
-Deliverable
+### Step 7 — Auth UI (Day 3–4)
 
-Tables created in Neon
+**Tasks**
 
-Relationships verified
+- Login page
+- Signup page
+- JWT storage
+- Role-based redirects
+- Protected routes
 
-STEP 3 — Authentication & Security (Day 2–3)
-Tasks
+**Deliverables**
 
-Implement:
+- Auth flow end-to-end
 
-Signup API
+### Step 8 — Educator UI (Day 5–7)
 
-Login API
+**Pages**
 
-Add:
+- Educator dashboard
+- Create course page
+- Course detail page
 
-BCrypt password hashing
+**Features**
 
-JWT generation & validation
+- Course form
+- Lesson management
+- Publish action
 
-Configure Spring Security:
+**Deliverables**
 
-Stateless sessions
+- Educator can manage courses from UI
 
-Role-based access
+### Step 9 — Student UI (Day 8–10)
 
-Protect APIs
+**Pages**
 
-Deliverable
+- Course list
+- Course detail
+- Learning page
+- Student dashboard
 
-JWT auth working
+**Features**
 
-Role-based access enforced
+- Enroll button
+- Lesson viewer
+- Progress bar
 
-STEP 4 — Educator APIs (Day 4–5)
-APIs to Implement
+**Deliverables**
 
-Create course
+- Student learning flow complete
 
-Get educator courses
+### Step 10 — UX, error handling & polish (Day 11–12)
 
-Add lesson
+**Tasks**
 
-Publish course
+- Loading states
+- Empty states
+- Error messages
+- Form validation
+- Role-based UI visibility
 
-Rules
+**Deliverables**
 
-Only EDUCATOR can access
+- App feels production-ready
 
-Only course owner can modify
+### Step 11 — Finalization (Day 13–14)
 
-Draft courses invisible to students
+**Tasks**
 
-Deliverable
+- Add README
+- Add screenshots
+- Deploy:
+  - Frontend → Vercel
+  - Backend → Render / Railway
+- Fix critical bugs
 
-Educator flow usable via Postman
+**Deliverables**
 
-STEP 5 — Student APIs (Day 6–7)
-APIs to Implement
+- Live demo URL
+- Interview-ready project
 
-List published courses
+## Development rules (summary)
 
-Course details
-
-Enroll in course
-
-Get learning content
-
-Mark lesson completed
-
-Get student dashboard
-
-Rules
-
-Prevent duplicate enrollment
-
-Enrollment required before learning
-
-Backend calculates progress
-
-Deliverable
-
-Student flow functional via APIs
-
-STEP 6 — Frontend Setup (Day 1 Parallel)
-Tasks
-
-Create React project
-
-Setup:
-
-React Router
-
-Axios
-
-React Query
-
-Auth context setup
-
-API layer abstraction
-
-Deliverable
-
-App skeleton ready
-
-STEP 7 — Auth UI (Day 3–4)
-Tasks
-
-Login page
-
-Signup page
-
-JWT storage
-
-Role-based redirects
-
-Protected routes
-
-Deliverable
-
-Auth flow end-to-end
-
-STEP 8 — Educator UI (Day 5–7)
-Pages
-
-Educator dashboard
-
-Create course page
-
-Course detail page
-
-Features
-
-Course form
-
-Lesson management
-
-Publish action
-
-Deliverable
-
-Educator can manage courses from UI
-
-STEP 9 — Student UI (Day 8–10)
-Pages
-
-Course list
-
-Course detail
-
-Learning page
-
-Student dashboard
-
-Features
-
-Enroll button
-
-Lesson viewer
-
-Progress bar
-
-Deliverable
-
-Student learning flow complete
-
-STEP 10 — UX, Error Handling & Polish (Day 11–12)
-Tasks
-
-Loading states
-
-Empty states
-
-Error messages
-
-Form validation
-
-Role-based UI visibility
-
-Deliverable
-
-App feels production-ready
-
-STEP 11 — Finalization (Day 13–14)
-Tasks
-
-Add README
-
-Add screenshots
-
-Deploy:
-
-Frontend → Vercel
-
-Backend → Render / Railway
-
-Fix critical bugs
-
-Deliverable
-
-Live demo URL
-
-Interview-ready project
-
-4️⃣ Development Rules (Summary)
-
-Backend is source of truth
-
-No logic in controllers
-
-DTOs only, no entity exposure
-
-No role trust from frontend
-
-Feature ownership > feature count
+- Backend is source of truth
+- No logic in controllers
+- DTOs only, no entity exposure
+- No role trust from frontend
+- Feature ownership > feature count
