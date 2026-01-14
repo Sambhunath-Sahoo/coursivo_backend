@@ -12,3 +12,7 @@ spring.datasource.password=
 spring.jpa.hibernate.ddl-auto=
 spring.jpa.show-sql=
 
+# JWT (do NOT commit real secrets; keep them in local application.properties or environment variables)
+# security.jwt.secret should be a strong random string (32+ characters recommended for HS256)
+security.jwt.secret=
+security.jwt.expiration-minutes=
