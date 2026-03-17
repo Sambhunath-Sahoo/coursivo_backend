@@ -35,3 +35,7 @@ build/
 ### Secrets / local config ###
 src/main/resources/application.properties
 documents
+
+### Claude Code personal files ###
+CLAUDE.local.md
+.claude/settings.local.json
