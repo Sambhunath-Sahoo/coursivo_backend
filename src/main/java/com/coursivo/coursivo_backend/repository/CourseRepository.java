@@ -12,8 +12,9 @@ import java.util.List;
  * For Create Course flow, we only need save().
  */
 public interface CourseRepository extends JpaRepository<Course, Long> {
-    List<Course> findByInstructorIdOrderByCreatedAtDesc(Long instructorId);
 
-    List<Course> findByStatusOrderByCreatedAtDesc(CourseStatus status);
+	List<Course> findByInstructorIdOrderByCreatedAtDesc(Long instructorId);
+
+	List<Course> findByStatusOrderByCreatedAtDesc(CourseStatus status);
+
 }
-

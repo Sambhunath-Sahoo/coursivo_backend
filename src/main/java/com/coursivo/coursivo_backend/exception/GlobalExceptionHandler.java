@@ -2,6 +2,7 @@ package com.coursivo.coursivo_backend.exception;
 
 import com.coursivo.coursivo_backend.dto.common.ApiMetaData;
 import com.coursivo.coursivo_backend.dto.common.ApiResponse;
+import com.coursivo.coursivo_backend.exception.ResourceNotFoundException;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,40 +17,47 @@ import java.util.stream.Collectors;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ApiResponse<Object>> handleValidation(MethodArgumentNotValidException ex) {
-        String message = ex.getBindingResult().getFieldErrors().stream()
-                .map(this::formatFieldError)
-                .collect(Collectors.joining(", "));
-        return error(HttpStatus.BAD_REQUEST, message.isBlank() ? "Validation failed" : message);
-    }
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	public ResponseEntity<ApiResponse<Object>> handleValidation(MethodArgumentNotValidException ex) {
+		String message = ex.getBindingResult()
+			.getFieldErrors()
+			.stream()
+			.map(this::formatFieldError)
+			.collect(Collectors.joining(", "));
+		return error(HttpStatus.BAD_REQUEST, message.isBlank() ? "Validation failed" : message);
+	}
 
-    @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<ApiResponse<Object>> handleConstraintViolation(ConstraintViolationException ex) {
-        return error(HttpStatus.BAD_REQUEST, ex.getMessage());
-    }
+	@ExceptionHandler(ConstraintViolationException.class)
+	public ResponseEntity<ApiResponse<Object>> handleConstraintViolation(ConstraintViolationException ex) {
+		return error(HttpStatus.BAD_REQUEST, ex.getMessage());
+	}
 
-    @ExceptionHandler(IllegalArgumentException.class)
-    public ResponseEntity<ApiResponse<Object>> handleIllegalArgument(IllegalArgumentException ex) {
-        return error(HttpStatus.BAD_REQUEST, ex.getMessage());
-    }
+	@ExceptionHandler(IllegalArgumentException.class)
+	public ResponseEntity<ApiResponse<Object>> handleIllegalArgument(IllegalArgumentException ex) {
+		return error(HttpStatus.BAD_REQUEST, ex.getMessage());
+	}
 
-    @ExceptionHandler(AccessDeniedException.class)
-    public ResponseEntity<ApiResponse<Object>> handleAccessDenied(AccessDeniedException ex) {
-        return error(HttpStatus.FORBIDDEN, ex.getMessage());
-    }
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<ApiResponse<Object>> handleNotFound(ResourceNotFoundException ex) {
+		return error(HttpStatus.NOT_FOUND, ex.getMessage());
+	}
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ApiResponse<Object>> handleGeneric(Exception ex) {
-        return error(HttpStatus.INTERNAL_SERVER_ERROR, "Something went wrong");
-    }
+	@ExceptionHandler(AccessDeniedException.class)
+	public ResponseEntity<ApiResponse<Object>> handleAccessDenied(AccessDeniedException ex) {
+		return error(HttpStatus.FORBIDDEN, ex.getMessage());
+	}
 
-    private ResponseEntity<ApiResponse<Object>> error(HttpStatus status, String message) {
-        return ResponseEntity.status(status).body(new ApiResponse<>(ApiMetaData.failure(message), null));
-    }
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<ApiResponse<Object>> handleGeneric(Exception ex) {
+		return error(HttpStatus.INTERNAL_SERVER_ERROR, "Something went wrong");
+	}
 
-    private String formatFieldError(FieldError fe) {
-        return fe.getField() + ": " + (fe.getDefaultMessage() == null ? "invalid" : fe.getDefaultMessage());
-    }
+	private ResponseEntity<ApiResponse<Object>> error(HttpStatus status, String message) {
+		return ResponseEntity.status(status).body(new ApiResponse<>(ApiMetaData.failure(message), null));
+	}
+
+	private String formatFieldError(FieldError fe) {
+		return fe.getField() + ": " + (fe.getDefaultMessage() == null ? "invalid" : fe.getDefaultMessage());
+	}
+
 }
-

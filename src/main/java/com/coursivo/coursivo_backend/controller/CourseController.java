@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,39 +23,46 @@ import java.util.List;
 @RequestMapping("/api")
 public class CourseController {
 
-    private final CourseService courseService;
+	private final CourseService courseService;
 
-    public CourseController(CourseService courseService) {
-        this.courseService = courseService;
-    }
+	public CourseController(CourseService courseService) {
+		this.courseService = courseService;
+	}
 
-    @GetMapping("/courses")
-    public ResponseEntity<ApiResponse<List<CourseResponse>>> getPublishedCourses() {
-        List<CourseResponse> courses = courseService.getPublishedCourses().stream()
-                .map(CourseResponse::from)
-                .toList();
-        return ResponseEntity.ok(ApiResponse.ok(courses, "Courses fetched successfully"));
-    }
+	@GetMapping("/courses")
+	public ResponseEntity<ApiResponse<List<CourseResponse>>> getPublishedCourses() {
+		List<CourseResponse> courses = courseService.getPublishedCourses().stream().map(CourseResponse::from).toList();
+		return ResponseEntity.ok(ApiResponse.ok(courses, "Courses fetched successfully"));
+	}
 
-    @PostMapping("/instructor/courses")
-    @PreAuthorize("hasRole('INSTRUCTOR')")
-    public ResponseEntity<ApiResponse<CourseResponse>> createCourse(
-            @Valid @RequestBody CreateCourseRequest request,
-            @AuthenticationPrincipal CustomUserDetails principal
-    ) {
-        Course created = courseService.createCourse(request, principal.getUser());
-        return ResponseEntity.ok(ApiResponse.ok(CourseResponse.from(created), "Course created successfully"));
-    }
+	/**
+	 * GET /api/courses/{id} Public endpoint — returns a single course by ID. Returns 404
+	 * via {@link com.coursivo.coursivo_backend.exception.GlobalExceptionHandler} if the
+	 * course does not exist.
+	 */
+	@GetMapping("/courses/{id}")
+	public ResponseEntity<ApiResponse<CourseResponse>> getCourseById(@PathVariable Long id) {
+		CourseResponse course = CourseResponse.from(courseService.getCourseById(id));
+		return ResponseEntity.ok(ApiResponse.ok(course, "Course fetched successfully"));
+	}
 
-    @GetMapping("/instructor/courses")
-    @PreAuthorize("hasRole('INSTRUCTOR')")
-    public ResponseEntity<ApiResponse<List<CourseResponse>>> getInstructorCourses(
-            @AuthenticationPrincipal CustomUserDetails principal
-    ) {
-        List<CourseResponse> courses = courseService.getInstructorCourses(principal.getUser()).stream()
-                .map(CourseResponse::from)
-                .toList();
-        return ResponseEntity.ok(ApiResponse.ok(courses, "Courses fetched successfully"));
-    }
+	@PostMapping("/instructor/courses")
+	@PreAuthorize("hasRole('INSTRUCTOR')")
+	public ResponseEntity<ApiResponse<CourseResponse>> createCourse(@Valid @RequestBody CreateCourseRequest request,
+			@AuthenticationPrincipal CustomUserDetails principal) {
+		Course created = courseService.createCourse(request, principal.getUser());
+		return ResponseEntity.ok(ApiResponse.ok(CourseResponse.from(created), "Course created successfully"));
+	}
+
+	@GetMapping("/instructor/courses")
+	@PreAuthorize("hasRole('INSTRUCTOR')")
+	public ResponseEntity<ApiResponse<List<CourseResponse>>> getInstructorCourses(
+			@AuthenticationPrincipal CustomUserDetails principal) {
+		List<CourseResponse> courses = courseService.getInstructorCourses(principal.getUser())
+			.stream()
+			.map(CourseResponse::from)
+			.toList();
+		return ResponseEntity.ok(ApiResponse.ok(courses, "Courses fetched successfully"));
+	}
+
 }
-

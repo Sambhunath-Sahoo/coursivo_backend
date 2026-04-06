@@ -14,15 +14,15 @@ import java.util.Map;
 @RequestMapping("/api/health")
 public class HealthCheckController {
 
-    @GetMapping
-    public ResponseEntity<ApiResponse<Map<String, Object>>> healthCheck() {
-        Map<String, Object> healthData = new HashMap<>();
-        healthData.put("status", "UP");
-        healthData.put("timestamp", LocalDateTime.now());
-        healthData.put("service", "Coursivo Backend API");
-        healthData.put("version", "1.0.0");
+	@GetMapping
+	public ResponseEntity<ApiResponse<Map<String, Object>>> healthCheck() {
+		Map<String, Object> healthData = new HashMap<>();
+		healthData.put("status", "UP");
+		healthData.put("timestamp", LocalDateTime.now());
+		healthData.put("service", "Coursivo Backend API");
+		healthData.put("version", "1.0.0");
 
-        return ResponseEntity.ok(
-                ApiResponse.ok(healthData, "Service is healthy"));
-    }
+		return ResponseEntity.ok(ApiResponse.ok(healthData, "Service is healthy"));
+	}
+
 }

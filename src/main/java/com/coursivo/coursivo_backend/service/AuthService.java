@@ -17,57 +17,56 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthService {
 
-    private final UserRepository userRepository;
-    private final PasswordEncoder passwordEncoder;
-    private final AuthenticationManager authenticationManager;
-    private final JwtUtil jwtUtil;
+	private final UserRepository userRepository;
 
-    public AuthService(
-            UserRepository userRepository,
-            PasswordEncoder passwordEncoder,
-            AuthenticationManager authenticationManager,
-            JwtUtil jwtUtil
-    ) {
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
-        this.authenticationManager = authenticationManager;
-        this.jwtUtil = jwtUtil;
-    }
+	private final PasswordEncoder passwordEncoder;
 
-    public AuthResponse register(RegisterRequest request) {
-        if (userRepository.existsByEmail(request.email())) {
-            throw new IllegalArgumentException("Email is already registered.");
-        }
+	private final AuthenticationManager authenticationManager;
 
-        if (request.role() == UserRole.ADMIN) {
-            throw new IllegalArgumentException("Cannot self-register as ADMIN.");
-        }
+	private final JwtUtil jwtUtil;
 
-        String hashedPassword = passwordEncoder.encode(request.password());
+	public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder,
+			AuthenticationManager authenticationManager, JwtUtil jwtUtil) {
+		this.userRepository = userRepository;
+		this.passwordEncoder = passwordEncoder;
+		this.authenticationManager = authenticationManager;
+		this.jwtUtil = jwtUtil;
+	}
 
-        User user = User.builder()
-                .email(request.email())
-                .password(hashedPassword)
-                .fullName(request.fullName())
-                .role(request.role())
-                .isActive(true)
-                .build();
+	public AuthResponse register(RegisterRequest request) {
+		if (userRepository.existsByEmail(request.email())) {
+			throw new IllegalArgumentException("Email is already registered.");
+		}
 
-        userRepository.save(user);
+		if (request.role() == UserRole.ADMIN) {
+			throw new IllegalArgumentException("Cannot self-register as ADMIN.");
+		}
 
-        String token = jwtUtil.generateToken(user.getEmail(), user.getRole());
-        return AuthResponse.bearer(token);
-    }
+		String hashedPassword = passwordEncoder.encode(request.password());
 
-    public AuthResponse login(LoginRequest request) {
-        UsernamePasswordAuthenticationToken authToken =
-                new UsernamePasswordAuthenticationToken(request.email(), request.password());
+		User user = User.builder()
+			.email(request.email())
+			.password(hashedPassword)
+			.fullName(request.fullName())
+			.role(request.role())
+			.isActive(true)
+			.build();
 
-        Authentication authentication = authenticationManager.authenticate(authToken);
+		userRepository.save(user);
 
-        CustomUserDetails principal = (CustomUserDetails) authentication.getPrincipal();
-        String token = jwtUtil.generateToken(principal.getUsername(), principal.getUser().getRole());
-        return AuthResponse.bearer(token);
-    }
+		String token = jwtUtil.generateToken(user.getEmail(), user.getRole());
+		return AuthResponse.bearer(token);
+	}
+
+	public AuthResponse login(LoginRequest request) {
+		UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(request.email(),
+				request.password());
+
+		Authentication authentication = authenticationManager.authenticate(authToken);
+
+		CustomUserDetails principal = (CustomUserDetails) authentication.getPrincipal();
+		String token = jwtUtil.generateToken(principal.getUsername(), principal.getUser().getRole());
+		return AuthResponse.bearer(token);
+	}
+
 }
-

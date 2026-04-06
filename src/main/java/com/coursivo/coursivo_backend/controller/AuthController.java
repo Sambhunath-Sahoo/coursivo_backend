@@ -16,22 +16,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/auth")
 public class AuthController {
 
-    private final AuthService authService;
+	private final AuthService authService;
 
-    public AuthController(AuthService authService) {
-        this.authService = authService;
-    }
+	public AuthController(AuthService authService) {
+		this.authService = authService;
+	}
 
-    @PostMapping("/register")
-    public ResponseEntity<ApiResponse<AuthResponse>> register(@Valid @RequestBody RegisterRequest request) {
-        AuthResponse auth = authService.register(request);
-        return ResponseEntity.ok(ApiResponse.ok(auth, "Registration successful"));
-    }
+	@PostMapping("/register")
+	public ResponseEntity<ApiResponse<AuthResponse>> register(@Valid @RequestBody RegisterRequest request) {
+		AuthResponse auth = authService.register(request);
+		return ResponseEntity.ok(ApiResponse.ok(auth, "Registration successful"));
+	}
 
-    @PostMapping("/login")
-    public ResponseEntity<ApiResponse<AuthResponse>> login(@Valid @RequestBody LoginRequest request) {
-        AuthResponse auth = authService.login(request);
-        return ResponseEntity.ok(ApiResponse.ok(auth, "Login successful"));
-    }
+	@PostMapping("/login")
+	public ResponseEntity<ApiResponse<AuthResponse>> login(@Valid @RequestBody LoginRequest request) {
+		AuthResponse auth = authService.login(request);
+		return ResponseEntity.ok(ApiResponse.ok(auth, "Login successful"));
+	}
+
 }
-

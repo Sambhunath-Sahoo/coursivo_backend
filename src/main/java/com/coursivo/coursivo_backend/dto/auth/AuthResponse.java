@@ -1,11 +1,7 @@
 package com.coursivo.coursivo_backend.dto.auth;
 
-public record AuthResponse(
-        String token,
-        String tokenType
-) {
-    public static AuthResponse bearer(String token) {
-        return new AuthResponse(token, "Bearer");
-    }
+public record AuthResponse(String token, String tokenType) {
+	public static AuthResponse bearer(String token) {
+		return new AuthResponse(token, "Bearer");
+	}
 }
-

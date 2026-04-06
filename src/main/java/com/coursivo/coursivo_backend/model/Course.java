@@ -25,13 +25,9 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(
-        name = "courses",
-        indexes = {
-                @Index(name = "idx_courses_instructor_id", columnList = "instructor_id"),
-                @Index(name = "idx_courses_status", columnList = "status")
-        }
-)
+@Table(name = "courses",
+		indexes = { @Index(name = "idx_courses_instructor_id", columnList = "instructor_id"),
+				@Index(name = "idx_courses_status", columnList = "status") })
 @Getter
 @Setter
 @NoArgsConstructor
@@ -39,78 +35,79 @@ import java.time.LocalDateTime;
 @Builder
 public class Course {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @Column(nullable = false, length = 255)
-    private String title;
+	@Column(nullable = false, length = 255)
+	private String title;
 
-    @Column(columnDefinition = "TEXT")
-    private String description;
+	@Column(columnDefinition = "TEXT")
+	private String description;
 
-    /**
-     * Use BigDecimal for money to avoid floating-point rounding issues.
-     *
-     * We default to 0 so instructors can create drafts without immediately deciding pricing.
-     */
-    @Default
-    @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal price = BigDecimal.ZERO;
+	/**
+	 * Use BigDecimal for money to avoid floating-point rounding issues.
+	 *
+	 * We default to 0 so instructors can create drafts without immediately deciding
+	 * pricing.
+	 */
+	@Default
+	@Column(nullable = false, precision = 10, scale = 2)
+	private BigDecimal price = BigDecimal.ZERO;
 
-    @Default
-    @Column(nullable = false, length = 3)
-    private String currency = "INR";
+	@Default
+	@Column(nullable = false, length = 3)
+	private String currency = "INR";
 
-    @Default
-    @Column(name = "is_free", nullable = false)
-    private Boolean isFree = false;
+	@Default
+	@Column(name = "is_free", nullable = false)
+	private Boolean isFree = false;
 
-    @Column(name = "thumbnail_url", length = 2048)
-    private String thumbnailUrl;
+	@Column(name = "thumbnail_url", length = 2048)
+	private String thumbnailUrl;
 
-    /**
-     * Many courses belong to one instructor (User).
-     * LAZY: load instructor only when needed (reduces unnecessary DB work).
-     */
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "instructor_id", nullable = false)
-    private User instructor;
+	/**
+	 * Many courses belong to one instructor (User). LAZY: load instructor only when
+	 * needed (reduces unnecessary DB work).
+	 */
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "instructor_id", nullable = false)
+	private User instructor;
 
-    @Default
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 16)
-    private CourseStatus status = CourseStatus.DRAFT;
+	@Default
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, length = 16)
+	private CourseStatus status = CourseStatus.DRAFT;
 
-    @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
+	@Column(name = "created_at", nullable = false)
+	private LocalDateTime createdAt;
 
-    @Column(name = "updated_at", nullable = false)
-    private LocalDateTime updatedAt;
+	@Column(name = "updated_at", nullable = false)
+	private LocalDateTime updatedAt;
 
-    @PrePersist
-    protected void onCreate() {
-        LocalDateTime now = LocalDateTime.now();
-        this.createdAt = now;
-        this.updatedAt = now;
+	@PrePersist
+	protected void onCreate() {
+		LocalDateTime now = LocalDateTime.now();
+		this.createdAt = now;
+		this.updatedAt = now;
 
-        if (this.currency == null || this.currency.isBlank()) {
-            this.currency = "INR";
-        }
-        if (this.isFree == null) {
-            this.isFree = false;
-        }
-        if (this.price == null) {
-            this.price = BigDecimal.ZERO;
-        }
-        if (this.status == null) {
-            this.status = CourseStatus.DRAFT;
-        }
-    }
+		if (this.currency == null || this.currency.isBlank()) {
+			this.currency = "INR";
+		}
+		if (this.isFree == null) {
+			this.isFree = false;
+		}
+		if (this.price == null) {
+			this.price = BigDecimal.ZERO;
+		}
+		if (this.status == null) {
+			this.status = CourseStatus.DRAFT;
+		}
+	}
 
-    @PreUpdate
-    protected void onUpdate() {
-        this.updatedAt = LocalDateTime.now();
-    }
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = LocalDateTime.now();
+	}
+
 }
-

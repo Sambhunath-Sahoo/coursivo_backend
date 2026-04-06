@@ -16,51 +16,45 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
-    private final SecretKey signingKey;
+	private final SecretKey signingKey;
 
-    private final long expirationMinutes;
+	private final long expirationMinutes;
 
-    public JwtUtil(
-            @Value("${security.jwt.secret}") String jwtSecret,
-            @Value("${security.jwt.expiration-minutes:60}") long expirationMinutes
-    ) {
-        this.signingKey = Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8));
-        this.expirationMinutes = expirationMinutes;
-    }
+	public JwtUtil(@Value("${security.jwt.secret}") String jwtSecret,
+			@Value("${security.jwt.expiration-minutes:60}") long expirationMinutes) {
+		this.signingKey = Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8));
+		this.expirationMinutes = expirationMinutes;
+	}
 
-    public String generateToken(String email, UserRole role) {
-        Instant now = Instant.now();
-        Instant expiry = now.plus(expirationMinutes, ChronoUnit.MINUTES);
+	public String generateToken(String email, UserRole role) {
+		Instant now = Instant.now();
+		Instant expiry = now.plus(expirationMinutes, ChronoUnit.MINUTES);
 
-        return Jwts.builder()
-                .subject(email)
-                .claim("role", role.name())
-                .issuedAt(Date.from(now))
-                .expiration(Date.from(expiry))
-                .signWith(signingKey, Jwts.SIG.HS256)
-                .compact();
-    }
+		return Jwts.builder()
+			.subject(email)
+			.claim("role", role.name())
+			.issuedAt(Date.from(now))
+			.expiration(Date.from(expiry))
+			.signWith(signingKey, Jwts.SIG.HS256)
+			.compact();
+	}
 
-    public boolean isTokenValid(String token) {
-        parse(token);
-        return true;
-    }
+	public boolean isTokenValid(String token) {
+		parse(token);
+		return true;
+	}
 
-    public String extractEmail(String token) {
-        return parse(token).getSubject();
-    }
+	public String extractEmail(String token) {
+		return parse(token).getSubject();
+	}
 
-    public UserRole extractRole(String token) {
-        String role = parse(token).get("role", String.class);
-        return UserRole.valueOf(role);
-    }
+	public UserRole extractRole(String token) {
+		String role = parse(token).get("role", String.class);
+		return UserRole.valueOf(role);
+	}
 
-    private Claims parse(String token) {
-        return Jwts.parser()
-                .verifyWith(signingKey)
-                .build()
-                .parseSignedClaims(token)
-                .getPayload();
-    }
+	private Claims parse(String token) {
+		return Jwts.parser().verifyWith(signingKey).build().parseSignedClaims(token).getPayload();
+	}
+
 }
-

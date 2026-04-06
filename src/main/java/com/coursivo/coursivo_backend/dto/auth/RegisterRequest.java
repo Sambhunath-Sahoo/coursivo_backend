@@ -8,16 +8,11 @@ import jakarta.validation.constraints.NotNull;
 /**
  * DTO = Data Transfer Object
  *
- * WHY this exists:
- * - Controllers should NOT accept JPA entities directly.
- * - A DTO defines exactly what the API expects from the client.
+ * WHY this exists: - Controllers should NOT accept JPA entities directly. - A DTO defines
+ * exactly what the API expects from the client.
  *
  * This request is used for: POST /api/auth/register
  */
-public record RegisterRequest(
-        @Email @NotBlank String email,
-        @NotBlank String password,
-        @NotBlank String fullName,
-        @NotNull UserRole role
-) {}
-
+public record RegisterRequest(@Email @NotBlank String email, @NotBlank String password, @NotBlank String fullName,
+		@NotNull UserRole role) {
+}

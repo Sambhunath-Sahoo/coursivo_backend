@@ -24,15 +24,8 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(
-        name = "users",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "uk_users_email", columnNames = "email")
-        },
-        indexes = {
-                @Index(name = "idx_users_email", columnList = "email")
-        }
-)
+@Table(name = "users", uniqueConstraints = { @UniqueConstraint(name = "uk_users_email", columnNames = "email") },
+		indexes = { @Index(name = "idx_users_email", columnList = "email") })
 @Getter
 @Setter
 @NoArgsConstructor
@@ -40,49 +33,50 @@ import java.time.LocalDateTime;
 @Builder
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @Email
-    @NotBlank
-    @Column(nullable = false, length = 255)
-    private String email;
+	@Email
+	@NotBlank
+	@Column(nullable = false, length = 255)
+	private String email;
 
-    @NotBlank
-    @Column(nullable = false)
-    private String password;
+	@NotBlank
+	@Column(nullable = false)
+	private String password;
 
-    @NotBlank
-    @Column(name = "full_name", nullable = false, length = 255)
-    private String fullName;
+	@NotBlank
+	@Column(name = "full_name", nullable = false, length = 255)
+	private String fullName;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 32)
-    private UserRole role;
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, length = 32)
+	private UserRole role;
 
-    @Default
-    @Column(name = "is_active", nullable = false)
-    private Boolean isActive = true;
+	@Default
+	@Column(name = "is_active", nullable = false)
+	private Boolean isActive = true;
 
-    @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
+	@Column(name = "created_at", nullable = false)
+	private LocalDateTime createdAt;
 
-    @Column(name = "updated_at", nullable = false)
-    private LocalDateTime updatedAt;
+	@Column(name = "updated_at", nullable = false)
+	private LocalDateTime updatedAt;
 
-    @PrePersist
-    protected void onCreate() {
-        LocalDateTime now = LocalDateTime.now();
-        this.createdAt = now;
-        this.updatedAt = now;
-        if (this.isActive == null) {
-            this.isActive = true;
-        }
-    }
+	@PrePersist
+	protected void onCreate() {
+		LocalDateTime now = LocalDateTime.now();
+		this.createdAt = now;
+		this.updatedAt = now;
+		if (this.isActive == null) {
+			this.isActive = true;
+		}
+	}
 
-    @PreUpdate
-    protected void onUpdate() {
-        this.updatedAt = LocalDateTime.now();
-    }
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = LocalDateTime.now();
+	}
+
 }
