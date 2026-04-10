@@ -9,6 +9,7 @@ import com.coursivo.coursivo_backend.model.UserRole;
 import com.coursivo.coursivo_backend.repository.CourseRepository;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -22,6 +23,7 @@ public class CourseService {
 		this.courseRepository = courseRepository;
 	}
 
+	@Transactional
 	public Course createCourse(CreateCourseRequest request, User instructor) {
 		if (instructor == null || instructor.getRole() != UserRole.INSTRUCTOR) {
 			throw new AccessDeniedException("Only INSTRUCTOR can create a course.");
@@ -44,6 +46,7 @@ public class CourseService {
 		return courseRepository.save(course);
 	}
 
+	@Transactional
 	public List<Course> getInstructorCourses(User instructor) {
 		if (instructor == null || instructor.getRole() != UserRole.INSTRUCTOR) {
 			throw new AccessDeniedException("Only INSTRUCTOR can view instructor courses.");
@@ -52,6 +55,7 @@ public class CourseService {
 		return courseRepository.findByInstructorIdOrderByCreatedAtDesc(instructor.getId());
 	}
 
+	@Transactional
 	public List<Course> getPublishedCourses() {
 		return courseRepository.findByStatusOrderByCreatedAtDesc(CourseStatus.PUBLISHED);
 	}
@@ -60,8 +64,10 @@ public class CourseService {
 	 * Returns a single course by ID regardless of status (so instructors can also preview
 	 * drafts). Throws 404 if not found.
 	 */
+	@Transactional
 	public Course getCourseById(Long id) {
-		return courseRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Course", id));
+		return courseRepository.findByIdWithLessons(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Course", id));
 	}
 
 }

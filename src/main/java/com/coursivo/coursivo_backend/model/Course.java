@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Index;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
@@ -23,6 +24,8 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "courses",
@@ -74,6 +77,15 @@ public class Course {
 	@JoinColumn(name = "instructor_id", nullable = false)
 	private User instructor;
 
+	/**
+	 * One course has many lessons. Cascade: persist/merge/remove operations cascade to
+	 * lessons. Orphan removal: deleting a lesson from the list removes it from DB.
+	 * Ordered by lesson_order ascending.
+	 */
+	@OneToMany(mappedBy = "course", cascade = jakarta.persistence.CascadeType.ALL, orphanRemoval = true)
+	@Builder.Default
+	private List<Lesson> lessons = new ArrayList<>();
+
 	@Default
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, length = 16)
@@ -110,4 +122,27 @@ public class Course {
 		this.updatedAt = LocalDateTime.now();
 	}
 
+	/**
+	 * Helper method to add a lesson and set the bidirectional relationship.
+	 */
+	public void addLesson(Lesson lesson) {
+		lessons.add(lesson);
+		lesson.setCourse(this);
+	}
+
+	/**
+	 * Helper method to remove a lesson and break the bidirectional relationship.
+	 */
+	public void removeLesson(Lesson lesson) {
+		lessons.remove(lesson);
+		lesson.setCourse(null);
+	}
+
+	/**
+	 * Helper method to clear all lessons.
+	 */
+	public void clearLessons() {
+		lessons.forEach(lesson -> lesson.setCourse(null));
+		lessons.clear();
+	}
 }
