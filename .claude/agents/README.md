@@ -1,27 +1,22 @@
 # Agents
 
-Place custom subagent definition files here (`.md` files).
+Specialized subagents for the Coursivo backend. Invoke via Claude Code for focused review tasks.
 
-Each agent file defines a specialized AI agent with a specific role, persona, and set of tools it can use. Claude Code can spawn these agents for focused tasks.
+## Available Agents
 
-## Example: `backend-reviewer.md`
-
-```markdown
----
-name: backend-reviewer
-description: Reviews Spring Boot code for architecture violations, security issues, and API standards
-tools: Read, Grep, Glob
----
-
-You are a Spring Boot code reviewer for the Coursivo backend.
-Check for:
-- Layer violations (controller calling repository directly)
-- Missing @Valid on request bodies
-- Entities exposed directly in responses (should use DTOs)
-- Hardcoded secrets or config values
-- Missing error handling
-```
+| Agent | Description |
+|---|---|
+| `backend-reviewer` | Reviews controllers, services, repositories for architecture, DTO boundary, validation, and API standard violations |
+| `security-auditor` | Audits for hardcoded secrets, broken auth, insecure endpoints, OWASP Top 10 |
+| `test-writer` | Writes and places JUnit 5 unit + MockMvc integration tests for any service or controller |
+| `kafka-reviewer` | Reviews Kafka producers, consumers, event classes, and retry/DLQ config for correctness and idempotency |
 
 ## Usage
 
-Once defined, Claude Code can use these agents automatically or you can invoke them.
+Ask Claude to use a specific agent by name, or Claude will select the appropriate one based on context.
+
+Examples:
+- "Review EnrollmentController with the backend-reviewer"
+- "Audit KafkaRetryConfig with the kafka-reviewer"
+- "Write tests for EnrollmentService using the test-writer"
+- "Run a security audit on AuthController"
