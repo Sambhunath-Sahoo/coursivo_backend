@@ -29207,3 +29207,1509 @@ java.nio.channels.AsynchronousCloseException: null
 2026-04-24T18:46:05.332+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] c.c.c.service.SendGridEmailService       : SendGrid response — Status: 202, Body: 
 2026-04-24T18:46:05.332+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] c.c.c.service.SendGridEmailService       : ✅ Email sent successfully to instructor2@example.com
 2026-04-24T18:46:05.332+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] c.c.c.kafka.NotificationConsumer         : Emails sent for enrollmentId=6
+2026-04-24T18:46:48.369+05:30  INFO 40464 --- [coursivo-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-24T18:46:48.375+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-retry2-24, groupId=notification-group-retry2] Revoke previously assigned partitions [course.enrollment.events.retry.5m-0]
+2026-04-24T18:46:48.375+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-dlq-21, groupId=notification-group-dlq] Revoke previously assigned partitions [course.enrollment.events.dlq-0]
+2026-04-24T18:46:48.375+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-retry1-23, groupId=notification-group-retry1] Revoke previously assigned partitions [course.enrollment.events.retry.30s-0]
+2026-04-24T18:46:48.375+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-22, groupId=notification-group] Revoke previously assigned partitions [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T18:46:48.375+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-retry1: partitions revoked: [course.enrollment.events.retry.30s-0]
+2026-04-24T18:46:48.375+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-retry2: partitions revoked: [course.enrollment.events.retry.5m-0]
+2026-04-24T18:46:48.375+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: partitions revoked: [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T18:46:48.375+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-dlq: partitions revoked: [course.enrollment.events.dlq-0]
+2026-04-24T18:46:48.376+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-21, groupId=notification-group-dlq] Member consumer-notification-group-dlq-21-afe7b8d9-7a2f-45fc-896d-cb93999d46d9 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) due to the consumer unsubscribed from all topics
+2026-04-24T18:46:48.376+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-23, groupId=notification-group-retry1] Member consumer-notification-group-retry1-23-65d454a6-b89c-472a-8093-b9ee1a5f63d3 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) due to the consumer unsubscribed from all topics
+2026-04-24T18:46:48.376+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-22, groupId=notification-group] Member consumer-notification-group-22-c6daf056-a6b1-4118-adfb-b66589cca8cd sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) due to the consumer unsubscribed from all topics
+2026-04-24T18:46:48.376+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-24, groupId=notification-group-retry2] Member consumer-notification-group-retry2-24-44c9e21c-e2f6-424d-99ce-93338dc89af8 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) due to the consumer unsubscribed from all topics
+2026-04-24T18:46:48.376+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-21, groupId=notification-group-dlq] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.376+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-23, groupId=notification-group-retry1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.376+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-24, groupId=notification-group-retry2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.376+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-21, groupId=notification-group-dlq] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.376+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-22, groupId=notification-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.379+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-24, groupId=notification-group-retry2] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.379+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-23, groupId=notification-group-retry1] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.379+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-22, groupId=notification-group] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.379+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-dlq-21, groupId=notification-group-dlq] Unsubscribed all topics or patterns and assigned partitions
+2026-04-24T18:46:48.379+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-retry2-24, groupId=notification-group-retry2] Unsubscribed all topics or patterns and assigned partitions
+2026-04-24T18:46:48.379+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-retry1-23, groupId=notification-group-retry1] Unsubscribed all topics or patterns and assigned partitions
+2026-04-24T18:46:48.385+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-22, groupId=notification-group] Unsubscribed all topics or patterns and assigned partitions
+2026-04-24T18:46:48.386+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-21, groupId=notification-group-dlq] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.386+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-24, groupId=notification-group-retry2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.387+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-21, groupId=notification-group-dlq] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.387+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-23, groupId=notification-group-retry1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.388+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-24, groupId=notification-group-retry2] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.388+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-23, groupId=notification-group-retry1] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.387+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-22, groupId=notification-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.388+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-22, groupId=notification-group] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:46:48.754+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:46:48.754+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:46:48.755+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:46:48.764+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-notification-group-retry1-23 unregistered
+2026-04-24T18:46:48.764+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-retry1: Consumer stopped
+2026-04-24T18:46:48.764+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-notification-group-dlq-21 unregistered
+2026-04-24T18:46:48.764+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-dlq: Consumer stopped
+2026-04-24T18:46:48.764+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-notification-group-retry2-24 unregistered
+2026-04-24T18:46:48.764+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-retry2: Consumer stopped
+2026-04-24T18:46:48.764+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-notification-group-22 unregistered
+2026-04-24T18:46:48.765+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: Consumer stopped
+2026-04-24T18:46:48.765+05:30  INFO 40464 --- [coursivo-backend] [Thread-23] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-24T18:46:50.773+05:30  INFO 40464 --- [coursivo-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-24T18:46:50.774+05:30 ERROR 40464 --- [coursivo-backend] [http-nio-8080-Acceptor] org.apache.tomcat.util.net.Acceptor      : Socket accept failed
+
+java.nio.channels.AsynchronousCloseException: null
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:218) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.end(ServerSocketChannelImpl.java:374) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:399) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:532) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:71) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:127) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-04-24T18:46:50.777+05:30  INFO 40464 --- [coursivo-backend] [Thread-23] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=coursivo-backend-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2026-04-24T18:46:50.783+05:30  INFO 40464 --- [coursivo-backend] [Thread-23] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:46:50.783+05:30  INFO 40464 --- [coursivo-backend] [Thread-23] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:46:50.783+05:30  INFO 40464 --- [coursivo-backend] [Thread-23] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-04-24T18:46:50.783+05:30  INFO 40464 --- [coursivo-backend] [Thread-23] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:46:50.783+05:30  INFO 40464 --- [coursivo-backend] [Thread-23] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for coursivo-backend-producer-1 unregistered
+2026-04-24T18:46:50.786+05:30  INFO 40464 --- [coursivo-backend] [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T18:46:50.789+05:30  INFO 40464 --- [coursivo-backend] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2026-04-24T18:46:51.789+05:30  INFO 40464 --- [coursivo-backend] [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2026-04-24T18:46:51.903+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Starting CoursivoBackendApplication using Java 25.0.1 with PID 40464 (/Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend/target/classes started by sambhunathsahoo in /Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend)
+2026-04-24T18:46:51.904+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-24T18:46:51.971+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-24T18:46:51.979+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 5 JPA repository interfaces.
+2026-04-24T18:46:52.067+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-24T18:46:52.067+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-24T18:46:52.067+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-04-24T18:46:52.077+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 173 ms
+2026-04-24T18:46:52.109+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-24T18:46:52.125+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-24T18:46:52.125+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2026-04-24T18:46:53.097+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@14ed34e8
+2026-04-24T18:46:53.097+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2026-04-24T18:46:53.681+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-tiny-math-a1ln08p6.ap-southeast-1.aws.neon.tech/coursivo?sslmode=require&channelBinding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: coursivo/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-24T18:46:53.769+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-24T18:46:56.628+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T18:46:56.774+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-04-24T18:46:56.890+05:30  WARN 40464 --- [coursivo-backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-24T18:46:57.045+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-24T18:46:57.078+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : AdminClientConfig values: 
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = coursivo-backend-admin-6
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = false
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2026-04-24T18:46:57.079+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T18:46:57.079+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T18:46:57.079+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777036617079
+2026-04-24T18:46:57.089+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.springframework.kafka.core.KafkaAdmin  : Topic 'course.enrollment.events' exists but has a different partition count: 3 not 1
+2026-04-24T18:46:57.090+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:46:57.090+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:46:57.090+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:46:57.090+05:30  INFO 40464 --- [coursivo-backend] [kafka-admin-client-thread | coursivo-backend-admin-6] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for coursivo-backend-admin-6 unregistered
+2026-04-24T18:46:57.090+05:30  INFO 40464 --- [coursivo-backend] [kafka-admin-client-thread | coursivo-backend-admin-6] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:46:57.090+05:30  INFO 40464 --- [coursivo-backend] [kafka-admin-client-thread | coursivo-backend-admin-6] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:46:57.090+05:30  INFO 40464 --- [coursivo-backend] [kafka-admin-client-thread | coursivo-backend-admin-6] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:46:57.091+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-24T18:46:57.092+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-dlq-25
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group-dlq
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class com.coursivo.coursivo_backend.config.KafkaConsumerConfig$$Lambda/0x00003ffc01d52ba8
+
+2026-04-24T18:46:57.093+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T18:46:57.094+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T18:46:57.094+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T18:46:57.094+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777036617094
+2026-04-24T18:46:57.094+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Subscribed to topic(s): course.enrollment.events.dlq
+2026-04-24T18:46:57.094+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-26
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class com.coursivo.coursivo_backend.config.KafkaConsumerConfig$$Lambda/0x00003ffc01d52ba8
+
+2026-04-24T18:46:57.095+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T18:46:57.096+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T18:46:57.096+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T18:46:57.096+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777036617096
+2026-04-24T18:46:57.096+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Subscribed to topic(s): course.enrollment.events
+2026-04-24T18:46:57.096+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-retry1-27
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group-retry1
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class com.coursivo.coursivo_backend.config.KafkaConsumerConfig$$Lambda/0x00003ffc01d52ba8
+
+2026-04-24T18:46:57.097+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T18:46:57.097+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T18:46:57.097+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false)
+2026-04-24T18:46:57.097+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] (Re-)joining group
+2026-04-24T18:46:57.098+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T18:46:57.098+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T18:46:57.098+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T18:46:57.098+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777036617098
+2026-04-24T18:46:57.098+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false)
+2026-04-24T18:46:57.098+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Subscribed to topic(s): course.enrollment.events.retry.30s
+2026-04-24T18:46:57.098+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] (Re-)joining group
+2026-04-24T18:46:57.099+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-retry2-28
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group-retry2
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class com.coursivo.coursivo_backend.config.KafkaConsumerConfig$$Lambda/0x00003ffc01d52ba8
+
+2026-04-24T18:46:57.100+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T18:46:57.100+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-dlq-25-370fb76b-9863-4590-a356-15ee10d8d1da
+2026-04-24T18:46:57.101+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] (Re-)joining group
+2026-04-24T18:46:57.101+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-26-4af11a5a-800f-493b-a8dc-9a15d243bf2b
+2026-04-24T18:46:57.101+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] (Re-)joining group
+2026-04-24T18:46:57.101+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T18:46:57.101+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T18:46:57.101+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777036617101
+2026-04-24T18:46:57.101+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T18:46:57.101+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Subscribed to topic(s): course.enrollment.events.retry.5m
+2026-04-24T18:46:57.101+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false)
+2026-04-24T18:46:57.102+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] (Re-)joining group
+2026-04-24T18:46:57.103+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Started CoursivoBackendApplication in 5.208 seconds (process running for 633.011)
+2026-04-24T18:46:57.103+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-04-24T18:46:57.104+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T18:46:57.104+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false)
+2026-04-24T18:46:57.104+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-retry1-27-9ba011e5-a1e7-43b5-a89e-87219554c75f
+2026-04-24T18:46:57.104+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] (Re-)joining group
+2026-04-24T18:46:57.104+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] (Re-)joining group
+2026-04-24T18:46:57.105+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-retry2-28-ffa41c5c-684e-4f13-bf52-51ebf792523a
+2026-04-24T18:46:57.105+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] (Re-)joining group
+2026-04-24T18:47:00.108+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Successfully joined group with generation Generation{generationId=25, memberId='consumer-notification-group-dlq-25-370fb76b-9863-4590-a356-15ee10d8d1da', protocol='range'}
+2026-04-24T18:47:00.109+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Successfully joined group with generation Generation{generationId=96, memberId='consumer-notification-group-26-4af11a5a-800f-493b-a8dc-9a15d243bf2b', protocol='range'}
+2026-04-24T18:47:00.109+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Finished assignment for group at generation 25: {consumer-notification-group-dlq-25-370fb76b-9863-4590-a356-15ee10d8d1da=Assignment(partitions=[course.enrollment.events.dlq-0])}
+2026-04-24T18:47:00.109+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Finished assignment for group at generation 96: {consumer-notification-group-26-4af11a5a-800f-493b-a8dc-9a15d243bf2b=Assignment(partitions=[course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2])}
+2026-04-24T18:47:00.110+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Successfully joined group with generation Generation{generationId=51, memberId='consumer-notification-group-retry1-27-9ba011e5-a1e7-43b5-a89e-87219554c75f', protocol='range'}
+2026-04-24T18:47:00.112+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Successfully joined group with generation Generation{generationId=51, memberId='consumer-notification-group-retry2-28-ffa41c5c-684e-4f13-bf52-51ebf792523a', protocol='range'}
+2026-04-24T18:47:00.112+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Finished assignment for group at generation 51: {consumer-notification-group-retry2-28-ffa41c5c-684e-4f13-bf52-51ebf792523a=Assignment(partitions=[course.enrollment.events.retry.5m-0])}
+2026-04-24T18:47:00.112+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Finished assignment for group at generation 51: {consumer-notification-group-retry1-27-9ba011e5-a1e7-43b5-a89e-87219554c75f=Assignment(partitions=[course.enrollment.events.retry.30s-0])}
+2026-04-24T18:47:00.121+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Successfully synced group in generation Generation{generationId=51, memberId='consumer-notification-group-retry1-27-9ba011e5-a1e7-43b5-a89e-87219554c75f', protocol='range'}
+2026-04-24T18:47:00.121+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Successfully synced group in generation Generation{generationId=25, memberId='consumer-notification-group-dlq-25-370fb76b-9863-4590-a356-15ee10d8d1da', protocol='range'}
+2026-04-24T18:47:00.121+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Successfully synced group in generation Generation{generationId=51, memberId='consumer-notification-group-retry2-28-ffa41c5c-684e-4f13-bf52-51ebf792523a', protocol='range'}
+2026-04-24T18:47:00.121+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Successfully synced group in generation Generation{generationId=96, memberId='consumer-notification-group-26-4af11a5a-800f-493b-a8dc-9a15d243bf2b', protocol='range'}
+2026-04-24T18:47:00.122+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Notifying assignor about the new Assignment(partitions=[course.enrollment.events.retry.30s-0])
+2026-04-24T18:47:00.122+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Notifying assignor about the new Assignment(partitions=[course.enrollment.events.retry.5m-0])
+2026-04-24T18:47:00.122+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Notifying assignor about the new Assignment(partitions=[course.enrollment.events.dlq-0])
+2026-04-24T18:47:00.122+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Notifying assignor about the new Assignment(partitions=[course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2])
+2026-04-24T18:47:00.122+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Adding newly assigned partitions: [course.enrollment.events.retry.30s-0]
+2026-04-24T18:47:00.122+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Adding newly assigned partitions: [course.enrollment.events.retry.5m-0]
+2026-04-24T18:47:00.122+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Adding newly assigned partitions: [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T18:47:00.122+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Adding newly assigned partitions: [course.enrollment.events.dlq-0]
+2026-04-24T18:47:00.124+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Found no committed offset for partition course.enrollment.events.dlq-0
+2026-04-24T18:47:00.124+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Found no committed offset for partition course.enrollment.events.retry.5m-0
+2026-04-24T18:47:00.124+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Found no committed offset for partition course.enrollment.events.retry.30s-0
+2026-04-24T18:47:00.124+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition course.enrollment.events-1 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}
+2026-04-24T18:47:00.125+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition course.enrollment.events-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}
+2026-04-24T18:47:00.125+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition course.enrollment.events-2 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}
+2026-04-24T18:47:00.125+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: partitions assigned: [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T18:47:00.131+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Resetting offset for partition course.enrollment.events.retry.5m-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+2026-04-24T18:47:00.131+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Resetting offset for partition course.enrollment.events.dlq-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+2026-04-24T18:47:00.131+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-retry2: partitions assigned: [course.enrollment.events.retry.5m-0]
+2026-04-24T18:47:00.131+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-dlq: partitions assigned: [course.enrollment.events.dlq-0]
+2026-04-24T18:47:00.131+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Resetting offset for partition course.enrollment.events.retry.30s-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+2026-04-24T18:47:00.131+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-retry1: partitions assigned: [course.enrollment.events.retry.30s-0]
+2026-04-24T18:48:48.968+05:30  INFO 40464 --- [coursivo-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-24T18:48:48.973+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Revoke previously assigned partitions [course.enrollment.events.dlq-0]
+2026-04-24T18:48:48.973+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Revoke previously assigned partitions [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T18:48:48.973+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Revoke previously assigned partitions [course.enrollment.events.retry.30s-0]
+2026-04-24T18:48:48.973+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Revoke previously assigned partitions [course.enrollment.events.retry.5m-0]
+2026-04-24T18:48:48.973+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: partitions revoked: [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T18:48:48.973+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-dlq: partitions revoked: [course.enrollment.events.dlq-0]
+2026-04-24T18:48:48.973+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-retry2: partitions revoked: [course.enrollment.events.retry.5m-0]
+2026-04-24T18:48:48.973+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-retry1: partitions revoked: [course.enrollment.events.retry.30s-0]
+2026-04-24T18:48:48.974+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Member consumer-notification-group-26-4af11a5a-800f-493b-a8dc-9a15d243bf2b sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) due to the consumer unsubscribed from all topics
+2026-04-24T18:48:48.974+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Member consumer-notification-group-dlq-25-370fb76b-9863-4590-a356-15ee10d8d1da sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) due to the consumer unsubscribed from all topics
+2026-04-24T18:48:48.974+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Member consumer-notification-group-retry2-28-ffa41c5c-684e-4f13-bf52-51ebf792523a sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) due to the consumer unsubscribed from all topics
+2026-04-24T18:48:48.974+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.974+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Member consumer-notification-group-retry1-27-9ba011e5-a1e7-43b5-a89e-87219554c75f sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) due to the consumer unsubscribed from all topics
+2026-04-24T18:48:48.974+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.975+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.975+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.975+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.975+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Unsubscribed all topics or patterns and assigned partitions
+2026-04-24T18:48:48.975+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.976+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Unsubscribed all topics or patterns and assigned partitions
+2026-04-24T18:48:48.975+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.977+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.978+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.975+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Unsubscribed all topics or patterns and assigned partitions
+2026-04-24T18:48:48.978+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.979+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-26, groupId=notification-group] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.979+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Unsubscribed all topics or patterns and assigned partitions
+2026-04-24T18:48:48.980+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.990+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-27, groupId=notification-group-retry1] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.991+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.992+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-25, groupId=notification-group-dlq] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:48:48.992+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-28, groupId=notification-group-retry2] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T18:48:49.182+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:48:49.183+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:48:49.182+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:48:49.183+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:48:49.183+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:48:49.183+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:48:49.183+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:48:49.183+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:48:49.183+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-04-24T18:48:49.183+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-04-24T18:48:49.184+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-04-24T18:48:49.184+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:48:49.184+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:48:49.184+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:48:49.184+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-04-24T18:48:49.184+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:48:49.196+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-notification-group-26 unregistered
+2026-04-24T18:48:49.197+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: Consumer stopped
+2026-04-24T18:48:49.197+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-notification-group-dlq-25 unregistered
+2026-04-24T18:48:49.197+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-dlq: Consumer stopped
+2026-04-24T18:48:49.197+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-notification-group-retry2-28 unregistered
+2026-04-24T18:48:49.197+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-retry2: Consumer stopped
+2026-04-24T18:48:49.197+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-notification-group-retry1-27 unregistered
+2026-04-24T18:48:49.197+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-retry1: Consumer stopped
+2026-04-24T18:48:49.197+05:30  INFO 40464 --- [coursivo-backend] [Thread-27] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-24T18:48:51.205+05:30  INFO 40464 --- [coursivo-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-24T18:48:51.206+05:30 ERROR 40464 --- [coursivo-backend] [http-nio-8080-Acceptor] org.apache.tomcat.util.net.Acceptor      : Socket accept failed
+
+java.nio.channels.AsynchronousCloseException: null
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:218) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.end(ServerSocketChannelImpl.java:374) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:399) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:532) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:71) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:127) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-04-24T18:48:51.212+05:30  INFO 40464 --- [coursivo-backend] [Thread-27] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T18:48:51.214+05:30  INFO 40464 --- [coursivo-backend] [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2026-04-24T18:48:52.253+05:30  INFO 40464 --- [coursivo-backend] [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2026-04-24T18:48:52.365+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Starting CoursivoBackendApplication using Java 25.0.1 with PID 40464 (/Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend/target/classes started by sambhunathsahoo in /Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend)
+2026-04-24T18:48:52.365+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-24T18:48:52.445+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-24T18:48:52.453+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 5 JPA repository interfaces.
+2026-04-24T18:48:52.532+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-24T18:48:52.532+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-24T18:48:52.532+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-04-24T18:48:52.539+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 173 ms
+2026-04-24T18:48:52.581+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-24T18:48:52.593+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-24T18:48:52.594+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2026-04-24T18:48:53.637+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@37fa80bf
+2026-04-24T18:48:53.638+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2026-04-24T18:48:54.260+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-tiny-math-a1ln08p6.ap-southeast-1.aws.neon.tech/coursivo?sslmode=require&channelBinding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: coursivo/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-24T18:48:54.328+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-24T18:48:57.391+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T18:48:57.521+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-04-24T18:48:57.636+05:30  WARN 40464 --- [coursivo-backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-24T18:48:57.784+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-04-24T18:48:57.814+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : AdminClientConfig values: 
+	bootstrap.controllers = []
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	client.id = coursivo-backend-admin-7
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	enable.metrics.push = false
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2026-04-24T18:48:57.815+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T18:48:57.815+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T18:48:57.815+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777036737815
+2026-04-24T18:48:57.827+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.springframework.kafka.core.KafkaAdmin  : Topic 'course.enrollment.events' exists but has a different partition count: 3 not 1
+2026-04-24T18:48:57.828+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:48:57.828+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:48:57.828+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:48:57.828+05:30  INFO 40464 --- [coursivo-backend] [kafka-admin-client-thread | coursivo-backend-admin-7] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for coursivo-backend-admin-7 unregistered
+2026-04-24T18:48:57.828+05:30  INFO 40464 --- [coursivo-backend] [kafka-admin-client-thread | coursivo-backend-admin-7] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T18:48:57.828+05:30  INFO 40464 --- [coursivo-backend] [kafka-admin-client-thread | coursivo-backend-admin-7] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T18:48:57.828+05:30  INFO 40464 --- [coursivo-backend] [kafka-admin-client-thread | coursivo-backend-admin-7] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T18:48:57.829+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-24T18:48:57.830+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-dlq-29
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group-dlq
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class com.coursivo.coursivo_backend.config.KafkaConsumerConfig$$Lambda/0x00003ffc01348800
+
+2026-04-24T18:48:57.830+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T18:48:57.831+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T18:48:57.831+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T18:48:57.831+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777036737831
+2026-04-24T18:48:57.831+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] Subscribed to topic(s): course.enrollment.events.dlq
+2026-04-24T18:48:57.832+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-30
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class com.coursivo.coursivo_backend.config.KafkaConsumerConfig$$Lambda/0x00003ffc01348800
+
+2026-04-24T18:48:57.832+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T18:48:57.833+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T18:48:57.833+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T18:48:57.833+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777036737833
+2026-04-24T18:48:57.833+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-30, groupId=notification-group] Subscribed to topic(s): course.enrollment.events
+2026-04-24T18:48:57.836+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-retry1-31
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group-retry1
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class com.coursivo.coursivo_backend.config.KafkaConsumerConfig$$Lambda/0x00003ffc01348800
+
+2026-04-24T18:48:57.836+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T18:48:57.838+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-30, groupId=notification-group] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T18:48:57.838+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false)
+2026-04-24T18:48:57.838+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-30, groupId=notification-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false)
+2026-04-24T18:48:57.838+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T18:48:57.838+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] (Re-)joining group
+2026-04-24T18:48:57.838+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-30, groupId=notification-group] (Re-)joining group
+2026-04-24T18:48:57.839+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T18:48:57.839+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T18:48:57.839+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777036737839
+2026-04-24T18:48:57.839+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] Subscribed to topic(s): course.enrollment.events.retry.30s
+2026-04-24T18:48:57.840+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-retry2-32
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group-retry2
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class com.coursivo.coursivo_backend.config.KafkaConsumerConfig$$Lambda/0x00003ffc01348800
+
+2026-04-24T18:48:57.841+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T18:48:57.841+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-30, groupId=notification-group] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-30-a8428b34-3325-47fe-9e21-cd6393d198d3
+2026-04-24T18:48:57.841+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-dlq-29-91113f88-8397-4983-8896-53241b281ccf
+2026-04-24T18:48:57.841+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-30, groupId=notification-group] (Re-)joining group
+2026-04-24T18:48:57.841+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] (Re-)joining group
+2026-04-24T18:48:57.842+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T18:48:57.842+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T18:48:57.842+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777036737842
+2026-04-24T18:48:57.842+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] Subscribed to topic(s): course.enrollment.events.retry.5m
+2026-04-24T18:48:57.843+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T18:48:57.843+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false)
+2026-04-24T18:48:57.843+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] (Re-)joining group
+2026-04-24T18:48:57.844+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Started CoursivoBackendApplication in 5.488 seconds (process running for 753.754)
+2026-04-24T18:48:57.844+05:30  INFO 40464 --- [coursivo-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-04-24T18:48:57.845+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-retry1-31-cd5b7ad3-9f16-42bd-9b00-2a6c95c78d29
+2026-04-24T18:48:57.845+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] (Re-)joining group
+2026-04-24T18:48:57.845+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T18:48:57.845+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false)
+2026-04-24T18:48:57.845+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] (Re-)joining group
+2026-04-24T18:48:57.847+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-retry2-32-f4a089d8-fa7a-4659-af98-95e1d2956607
+2026-04-24T18:48:57.847+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] (Re-)joining group
+2026-04-24T18:49:00.847+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-30, groupId=notification-group] Successfully joined group with generation Generation{generationId=98, memberId='consumer-notification-group-30-a8428b34-3325-47fe-9e21-cd6393d198d3', protocol='range'}
+2026-04-24T18:49:00.847+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] Successfully joined group with generation Generation{generationId=27, memberId='consumer-notification-group-dlq-29-91113f88-8397-4983-8896-53241b281ccf', protocol='range'}
+2026-04-24T18:49:00.848+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-30, groupId=notification-group] Finished assignment for group at generation 98: {consumer-notification-group-30-a8428b34-3325-47fe-9e21-cd6393d198d3=Assignment(partitions=[course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2])}
+2026-04-24T18:49:00.848+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] Finished assignment for group at generation 27: {consumer-notification-group-dlq-29-91113f88-8397-4983-8896-53241b281ccf=Assignment(partitions=[course.enrollment.events.dlq-0])}
+2026-04-24T18:49:00.848+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] Successfully joined group with generation Generation{generationId=53, memberId='consumer-notification-group-retry1-31-cd5b7ad3-9f16-42bd-9b00-2a6c95c78d29', protocol='range'}
+2026-04-24T18:49:00.849+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] Successfully joined group with generation Generation{generationId=53, memberId='consumer-notification-group-retry2-32-f4a089d8-fa7a-4659-af98-95e1d2956607', protocol='range'}
+2026-04-24T18:49:00.850+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] Finished assignment for group at generation 53: {consumer-notification-group-retry2-32-f4a089d8-fa7a-4659-af98-95e1d2956607=Assignment(partitions=[course.enrollment.events.retry.5m-0])}
+2026-04-24T18:49:00.850+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] Finished assignment for group at generation 53: {consumer-notification-group-retry1-31-cd5b7ad3-9f16-42bd-9b00-2a6c95c78d29=Assignment(partitions=[course.enrollment.events.retry.30s-0])}
+2026-04-24T18:49:00.856+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-30, groupId=notification-group] Successfully synced group in generation Generation{generationId=98, memberId='consumer-notification-group-30-a8428b34-3325-47fe-9e21-cd6393d198d3', protocol='range'}
+2026-04-24T18:49:00.856+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] Successfully synced group in generation Generation{generationId=27, memberId='consumer-notification-group-dlq-29-91113f88-8397-4983-8896-53241b281ccf', protocol='range'}
+2026-04-24T18:49:00.856+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] Successfully synced group in generation Generation{generationId=53, memberId='consumer-notification-group-retry1-31-cd5b7ad3-9f16-42bd-9b00-2a6c95c78d29', protocol='range'}
+2026-04-24T18:49:00.857+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] Notifying assignor about the new Assignment(partitions=[course.enrollment.events.dlq-0])
+2026-04-24T18:49:00.857+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-30, groupId=notification-group] Notifying assignor about the new Assignment(partitions=[course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2])
+2026-04-24T18:49:00.857+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] Successfully synced group in generation Generation{generationId=53, memberId='consumer-notification-group-retry2-32-f4a089d8-fa7a-4659-af98-95e1d2956607', protocol='range'}
+2026-04-24T18:49:00.857+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] Notifying assignor about the new Assignment(partitions=[course.enrollment.events.retry.30s-0])
+2026-04-24T18:49:00.857+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] Notifying assignor about the new Assignment(partitions=[course.enrollment.events.retry.5m-0])
+2026-04-24T18:49:00.857+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] Adding newly assigned partitions: [course.enrollment.events.dlq-0]
+2026-04-24T18:49:00.857+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-30, groupId=notification-group] Adding newly assigned partitions: [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T18:49:00.857+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] Adding newly assigned partitions: [course.enrollment.events.retry.5m-0]
+2026-04-24T18:49:00.857+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] Adding newly assigned partitions: [course.enrollment.events.retry.30s-0]
+2026-04-24T18:49:00.860+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] Found no committed offset for partition course.enrollment.events.retry.5m-0
+2026-04-24T18:49:00.860+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] Found no committed offset for partition course.enrollment.events.dlq-0
+2026-04-24T18:49:00.860+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] Found no committed offset for partition course.enrollment.events.retry.30s-0
+2026-04-24T18:49:00.860+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition course.enrollment.events-1 to the committed offset FetchPosition{offset=3, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}
+2026-04-24T18:49:00.860+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition course.enrollment.events-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}
+2026-04-24T18:49:00.860+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition course.enrollment.events-2 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}
+2026-04-24T18:49:00.861+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#3-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: partitions assigned: [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T18:49:00.866+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-retry2-32, groupId=notification-group-retry2] Resetting offset for partition course.enrollment.events.retry.5m-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+2026-04-24T18:49:00.866+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-dlq-29, groupId=notification-group-dlq] Resetting offset for partition course.enrollment.events.dlq-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+2026-04-24T18:49:00.866+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-retry1-31, groupId=notification-group-retry1] Resetting offset for partition course.enrollment.events.retry.30s-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+2026-04-24T18:49:00.866+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-retry2: partitions assigned: [course.enrollment.events.retry.5m-0]
+2026-04-24T18:49:00.866+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-dlq: partitions assigned: [course.enrollment.events.dlq-0]
+2026-04-24T18:49:00.866+05:30  INFO 40464 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group-retry1: partitions assigned: [course.enrollment.events.retry.30s-0]
