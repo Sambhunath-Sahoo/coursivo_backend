@@ -1,9 +1,9 @@
 package com.coursivo.coursivo_backend.kafka;
 
+import com.coursivo.coursivo_backend.config.KafkaTopics;
 import com.coursivo.coursivo_backend.event.EnrollmentEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Component;
@@ -17,19 +17,14 @@ public class EnrollmentEventProducer {
 
 	private final KafkaTemplate<String, EnrollmentEvent> kafkaTemplate;
 
-	@Value("${kafka.topics.enrollment}")
-	private String enrollmentTopic;
-
 	public EnrollmentEventProducer(KafkaTemplate<String, EnrollmentEvent> kafkaTemplate) {
 		this.kafkaTemplate = kafkaTemplate;
 	}
 
 	public void publish(EnrollmentEvent event) {
-		// Using enrollmentId as the key ensures all events for the same enrollment
-		// land on the same partition — preserving order if replayed.
 		String key = String.valueOf(event.getEnrollmentId());
 
-		CompletableFuture<SendResult<String, EnrollmentEvent>> future = kafkaTemplate.send(enrollmentTopic, key, event);
+		CompletableFuture<SendResult<String, EnrollmentEvent>> future = kafkaTemplate.send(KafkaTopics.MAIN, key, event);
 
 		future.whenComplete((result, ex) -> {
 			if (ex != null) {
