@@ -29,7 +29,8 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http, JwtAuthenticationFilter jwtAuthenticationFilter)
 			throws Exception {
 
-		http.csrf(csrf -> csrf.disable())
+		http.cors(org.springframework.security.config.Customizer.withDefaults())
+			.csrf(csrf -> csrf.disable())
 			.sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
 			.authorizeHttpRequests(auth -> auth.requestMatchers("/api/auth/**")

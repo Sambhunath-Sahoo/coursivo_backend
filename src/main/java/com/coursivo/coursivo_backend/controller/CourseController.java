@@ -16,6 +16,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PutMapping;
+
+import com.coursivo.coursivo_backend.dto.course.CurriculumSaveRequest;
+import com.coursivo.coursivo_backend.service.CurriculumService;
 
 import java.util.List;
 
@@ -24,9 +28,11 @@ import java.util.List;
 public class CourseController {
 
 	private final CourseService courseService;
+	private final CurriculumService curriculumService;
 
-	public CourseController(CourseService courseService) {
+	public CourseController(CourseService courseService, CurriculumService curriculumService) {
 		this.courseService = courseService;
+		this.curriculumService = curriculumService;
 	}
 
 	@GetMapping("/courses")
@@ -63,6 +69,15 @@ public class CourseController {
 			.map(CourseResponse::from)
 			.toList();
 		return ResponseEntity.ok(ApiResponse.ok(courses, "Courses fetched successfully"));
+	}
+
+	@PutMapping("/instructor/courses/{id}/curriculum")
+	@PreAuthorize("hasRole('INSTRUCTOR')")
+	public ResponseEntity<ApiResponse<Void>> saveCurriculum(@PathVariable Long id,
+			@RequestBody CurriculumSaveRequest request,
+			@AuthenticationPrincipal CustomUserDetails principal) {
+		curriculumService.saveCurriculum(id, request, principal.getUser());
+		return ResponseEntity.ok(ApiResponse.ok(null, "Curriculum saved successfully"));
 	}
 
 }

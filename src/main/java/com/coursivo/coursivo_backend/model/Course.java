@@ -78,6 +78,15 @@ public class Course {
 	private User instructor;
 
 	/**
+	 * One course has many sections. Cascade: persist/merge/remove operations cascade to
+	 * sections. Orphan removal: deleting a section from the list removes it from DB.
+	 * Ordered by section_order ascending.
+	 */
+	@OneToMany(mappedBy = "course", cascade = jakarta.persistence.CascadeType.ALL, orphanRemoval = true)
+	@Builder.Default
+	private List<Section> sections = new ArrayList<>();
+
+	/**
 	 * One course has many lessons. Cascade: persist/merge/remove operations cascade to
 	 * lessons. Orphan removal: deleting a lesson from the list removes it from DB.
 	 * Ordered by lesson_order ascending.

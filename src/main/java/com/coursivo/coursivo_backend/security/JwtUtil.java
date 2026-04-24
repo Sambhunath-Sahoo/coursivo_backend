@@ -26,13 +26,15 @@ public class JwtUtil {
 		this.expirationMinutes = expirationMinutes;
 	}
 
-	public String generateToken(String email, UserRole role) {
+	public String generateToken(com.coursivo.coursivo_backend.model.User user) {
 		Instant now = Instant.now();
 		Instant expiry = now.plus(expirationMinutes, ChronoUnit.MINUTES);
 
 		return Jwts.builder()
-			.subject(email)
-			.claim("role", role.name())
+			.subject(user.getEmail())
+			.claim("role", user.getRole().name())
+			.claim("fullName", user.getFullName())
+			.claim("image", user.getImage())
 			.issuedAt(Date.from(now))
 			.expiration(Date.from(expiry))
 			.signWith(signingKey, Jwts.SIG.HS256)

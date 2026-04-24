@@ -58,6 +58,9 @@ public class User {
 	@Column(name = "is_active", nullable = false)
 	private Boolean isActive = true;
 
+	@Column(name = "image", length = 255)
+	private String image;
+
 	@Column(name = "created_at", nullable = false)
 	private LocalDateTime createdAt;
 
