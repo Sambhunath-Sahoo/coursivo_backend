@@ -17,3 +17,33 @@ spring.jpa.show-sql=
 # security.jwt.secret should be a strong random string (32+ characters recommended for HS256)
 security.jwt.secret=
 security.jwt.expiration-minutes=
+
+# =====================
+# Kafka Configuration
+# =====================
+spring.kafka.bootstrap-servers=
+
+# Producer settings
+spring.kafka.producer.key-serializer=org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.producer.value-serializer=org.springframework.kafka.support.serializer.JsonSerializer
+spring.kafka.producer.acks=all
+spring.kafka.producer.retries=3
+spring.kafka.producer.properties.enable.idempotence=true
+
+# Consumer settings
+spring.kafka.consumer.group-id=
+spring.kafka.consumer.auto-offset-reset=earliest
+spring.kafka.consumer.key-deserializer=org.apache.kafka.common.serialization.StringDeserializer
+spring.kafka.consumer.value-deserializer=org.springframework.kafka.support.serializer.JsonDeserializer
+spring.kafka.consumer.properties.spring.json.trusted.packages=
+
+# Topic names
+kafka.topics.enrollment=
+kafka.topics.enrollment-retry1=
+kafka.topics.enrollment-retry2=
+kafka.topics.enrollment-dlq=
+
+# SendGrid
+sendgrid.api-key=
+sendgrid.from-email=
+sendgrid.from-name=

@@ -1,0 +1,1222 @@
+2026-04-24T14:10:04.123+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Starting CoursivoBackendApplication using Java 25.0.1 with PID 25570 (/Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend/target/classes started by sambhunathsahoo in /Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend)
+2026-04-24T14:10:04.125+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-24T14:10:04.146+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-04-24T14:10:04.146+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-04-24T14:10:04.457+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-24T14:10:04.487+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 4 JPA repository interfaces.
+2026-04-24T14:10:04.842+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-24T14:10:04.849+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-24T14:10:04.850+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-04-24T14:10:04.866+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 720 ms
+2026-04-24T14:10:04.949+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-24T14:10:04.972+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 7.1.8.Final
+2026-04-24T14:10:05.173+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-24T14:10:05.188+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-04-24T14:10:06.498+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@23f6ee57
+2026-04-24T14:10:06.499+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-04-24T14:10:07.205+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-tiny-math-a1ln08p6.ap-southeast-1.aws.neon.tech/coursivo?sslmode=require&channelBinding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: coursivo/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-24T14:10:07.738+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-24T14:10:10.985+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T14:10:11.068+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-24T14:10:11.239+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-04-24T14:10:11.633+05:30  WARN 25570 --- [coursivo-backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-24T14:10:11.896+05:30  WARN 25570 --- [coursivo-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-04-24T14:10:11.956+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-24T14:10:11.960+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Started CoursivoBackendApplication in 7.998 seconds (process running for 8.201)
+2026-04-24T14:10:17.456+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-24T14:10:17.456+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-24T14:10:17.461+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-04-24T14:10:17.484+05:30  WARN 25570 --- [coursivo-backend] [http-nio-8080-exec-2] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/health' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-04-24T14:10:41.867+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-4] o.a.kafka.common.config.AbstractConfig   : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = coursivo-backend-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 3
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transaction.two.phase.commit.enable = false
+	transactional.id = null
+	value.serializer = class com.coursivo.coursivo_backend.config.KafkaProducerConfig$$Lambda/0x000007c001935ca0
+
+2026-04-24T14:10:41.894+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-4] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T14:10:41.941+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-4] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=coursivo-backend-producer-1] Instantiated an idempotent producer.
+2026-04-24T14:10:41.961+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-4] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T14:10:41.961+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-4] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T14:10:41.961+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-4] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777020041960
+2026-04-24T14:10:42.127+05:30  INFO 25570 --- [coursivo-backend] [kafka-producer-network-thread | coursivo-backend-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=coursivo-backend-producer-1] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T14:10:42.128+05:30  INFO 25570 --- [coursivo-backend] [kafka-producer-network-thread | coursivo-backend-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=coursivo-backend-producer-1] ProducerId set to 4 with epoch 0
+2026-04-24T14:10:42.219+05:30  INFO 25570 --- [coursivo-backend] [kafka-producer-network-thread | coursivo-backend-producer-1] c.c.c.kafka.EnrollmentEventProducer      : Published EnrollmentEvent: enrollmentId=12, topic=course.enrollment.events, partition=1, offset=0
+2026-04-24T14:11:42.214+05:30  INFO 25570 --- [coursivo-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 61 class path changes (0 additions, 0 deletions, 61 modifications)
+2026-04-24T14:11:42.229+05:30  INFO 25570 --- [coursivo-backend] [Thread-1] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-24T14:11:42.510+05:30  INFO 12050 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Starting CoursivoBackendApplication using Java 25.0.1 with PID 12050 (/Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend/target/classes started by sambhunathsahoo in /Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend)
+2026-04-24T14:11:42.510+05:30  INFO 12050 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-24T14:11:42.573+05:30  WARN 12050 --- [coursivo-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+2026-04-24T14:11:42.573+05:30  INFO 12050 --- [coursivo-backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-24T14:11:42.574+05:30 ERROR 12050 --- [coursivo-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:100) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:196) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:148) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:124) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:454) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:306) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:784) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:602) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:454) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1374) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-4.0.0.jar:4.0.0]
+	at com.coursivo.coursivo_backend.CoursivoBackendApplication.main(CoursivoBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.0.jar:4.0.0]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.coursivo.coursivo_backend.config.KafkaConsumerConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@fa1c4ba]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.1.jar:7.0.1]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-7.0.1.jar:7.0.1]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$0(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-7.0.1.jar:7.0.1]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1724) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:683) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:655) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1699) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:632) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:604) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:589) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanDefinitionsForType(OnBeanCondition.java:331) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:323) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:221) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.evaluateConditionalOnMissingBean(OnBeanCondition.java:204) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:149) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/apache/kafka/common/errors/SerializationException
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.1.jar:7.0.1]
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.kafka.common.errors.SerializationException
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.0.jar:4.0.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 41 common frames omitted
+
+2026-04-24T14:11:44.240+05:30  INFO 25570 --- [coursivo-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-24T14:11:44.241+05:30 ERROR 25570 --- [coursivo-backend] [http-nio-8080-Acceptor] org.apache.tomcat.util.net.Acceptor      : Socket accept failed
+
+java.nio.channels.AsynchronousCloseException: null
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:218) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.end(ServerSocketChannelImpl.java:374) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:399) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:532) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:71) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:127) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-04-24T14:11:44.252+05:30  INFO 25570 --- [coursivo-backend] [Thread-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=coursivo-backend-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2026-04-24T14:11:44.269+05:30  INFO 25570 --- [coursivo-backend] [Thread-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T14:11:44.269+05:30  INFO 25570 --- [coursivo-backend] [Thread-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T14:11:44.269+05:30  INFO 25570 --- [coursivo-backend] [Thread-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-04-24T14:11:44.269+05:30  INFO 25570 --- [coursivo-backend] [Thread-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T14:11:44.271+05:30  INFO 25570 --- [coursivo-backend] [Thread-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for coursivo-backend-producer-1 unregistered
+2026-04-24T14:11:44.276+05:30  INFO 25570 --- [coursivo-backend] [Thread-1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T14:11:44.280+05:30  INFO 25570 --- [coursivo-backend] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-04-24T14:11:45.334+05:30  INFO 25570 --- [coursivo-backend] [Thread-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-04-24T14:11:45.453+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Starting CoursivoBackendApplication using Java 25.0.1 with PID 25570 (/Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend/target/classes started by sambhunathsahoo in /Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend)
+2026-04-24T14:11:45.453+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-24T14:11:45.556+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-24T14:11:45.565+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 4 JPA repository interfaces.
+2026-04-24T14:11:45.711+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-24T14:11:45.712+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-24T14:11:45.712+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-04-24T14:11:45.720+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 265 ms
+2026-04-24T14:11:45.768+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-24T14:11:45.784+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-24T14:11:45.785+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2026-04-24T14:11:46.910+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@3b08fb30
+2026-04-24T14:11:46.911+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2026-04-24T14:11:47.519+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-tiny-math-a1ln08p6.ap-southeast-1.aws.neon.tech/coursivo?sslmode=require&channelBinding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: coursivo/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-24T14:11:47.607+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-24T14:11:50.939+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T14:11:51.091+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-04-24T14:11:51.198+05:30  WARN 25570 --- [coursivo-backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-24T14:11:51.347+05:30  WARN 25570 --- [coursivo-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-04-24T14:11:51.377+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-24T14:11:51.379+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Started CoursivoBackendApplication in 5.94 seconds (process running for 107.619)
+2026-04-24T14:11:51.380+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-04-24T14:16:27.274+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-24T14:16:27.275+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-24T14:16:27.290+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2026-04-24T14:16:27.292+05:30  WARN 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/health' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-04-24T14:16:57.151+05:30  INFO 25570 --- [coursivo-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-24T14:16:57.161+05:30  INFO 25570 --- [coursivo-backend] [Thread-5] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-24T14:16:57.191+05:30  INFO 12050 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Starting CoursivoBackendApplication using Java 25.0.1 with PID 12050 (/Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend/target/classes started by sambhunathsahoo in /Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend)
+2026-04-24T14:16:57.191+05:30  INFO 12050 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-24T14:16:57.283+05:30  WARN 12050 --- [coursivo-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+2026-04-24T14:16:57.284+05:30  INFO 12050 --- [coursivo-backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-24T14:16:57.285+05:30 ERROR 12050 --- [coursivo-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:100) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:196) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:148) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:124) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:454) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:306) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:784) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:602) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:454) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1374) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-4.0.0.jar:4.0.0]
+	at com.coursivo.coursivo_backend.CoursivoBackendApplication.main(CoursivoBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.0.jar:4.0.0]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.coursivo.coursivo_backend.config.KafkaConsumerConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@35b05239]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.1.jar:7.0.1]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-7.0.1.jar:7.0.1]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$0(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-7.0.1.jar:7.0.1]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1724) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:683) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:655) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1699) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:632) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:604) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:589) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanDefinitionsForType(OnBeanCondition.java:331) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:323) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:221) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.evaluateConditionalOnMissingBean(OnBeanCondition.java:204) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:149) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/apache/kafka/common/errors/SerializationException
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.1.jar:7.0.1]
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.kafka.common.errors.SerializationException
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.0.jar:4.0.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 41 common frames omitted
+
+2026-04-24T14:16:59.173+05:30  INFO 25570 --- [coursivo-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-24T14:16:59.174+05:30 ERROR 25570 --- [coursivo-backend] [http-nio-8080-Acceptor] org.apache.tomcat.util.net.Acceptor      : Socket accept failed
+
+java.nio.channels.AsynchronousCloseException: null
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:218) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.end(ServerSocketChannelImpl.java:374) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:399) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:532) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:71) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:127) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-04-24T14:16:59.184+05:30  INFO 25570 --- [coursivo-backend] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T14:16:59.189+05:30  INFO 25570 --- [coursivo-backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2026-04-24T14:17:00.375+05:30  INFO 25570 --- [coursivo-backend] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2026-04-24T14:17:00.482+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Starting CoursivoBackendApplication using Java 25.0.1 with PID 25570 (/Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend/target/classes started by sambhunathsahoo in /Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend)
+2026-04-24T14:17:00.482+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-24T14:17:00.599+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-24T14:17:00.606+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 4 JPA repository interfaces.
+2026-04-24T14:17:00.709+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-24T14:17:00.711+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-24T14:17:00.711+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-04-24T14:17:00.719+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 236 ms
+2026-04-24T14:17:00.771+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-24T14:17:00.786+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-24T14:17:00.786+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2026-04-24T14:17:01.805+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@964a1aa
+2026-04-24T14:17:01.806+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2026-04-24T14:17:02.456+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-tiny-math-a1ln08p6.ap-southeast-1.aws.neon.tech/coursivo?sslmode=require&channelBinding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: coursivo/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-24T14:17:02.516+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-24T14:17:05.833+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T14:17:05.974+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-04-24T14:17:06.141+05:30  WARN 25570 --- [coursivo-backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-24T14:17:06.348+05:30  WARN 25570 --- [coursivo-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-04-24T14:17:06.399+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-24T14:17:06.414+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class com.coursivo.coursivo_backend.config.KafkaConsumerConfig$$Lambda/0x000007c001c2f1a8
+
+2026-04-24T14:17:06.421+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T14:17:06.443+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T14:17:06.443+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T14:17:06.443+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777020426443
+2026-04-24T14:17:06.445+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Subscribed to topic(s): course.enrollment.events
+2026-04-24T14:17:06.455+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Started CoursivoBackendApplication in 5.986 seconds (process running for 422.68)
+2026-04-24T14:17:06.456+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-04-24T14:17:06.468+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T14:17:06.801+05:30  INFO 12050 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Starting CoursivoBackendApplication using Java 25.0.1 with PID 12050 (/Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend/target/classes started by sambhunathsahoo in /Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend)
+2026-04-24T14:17:06.801+05:30  INFO 12050 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-24T14:17:06.841+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false)
+2026-04-24T14:17:06.844+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] (Re-)joining group
+2026-04-24T14:17:06.867+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-1-0e67281e-6c74-4a06-af1f-1eb36ac9fb86
+2026-04-24T14:17:06.867+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] (Re-)joining group
+2026-04-24T14:17:06.871+05:30  WARN 12050 --- [coursivo-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+2026-04-24T14:17:06.872+05:30  INFO 12050 --- [coursivo-backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-24T14:17:06.872+05:30 ERROR 12050 --- [coursivo-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:100) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:196) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:148) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:124) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:454) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:306) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:784) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:602) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:454) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1374) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-4.0.0.jar:4.0.0]
+	at com.coursivo.coursivo_backend.CoursivoBackendApplication.main(CoursivoBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.0.jar:4.0.0]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.coursivo.coursivo_backend.config.KafkaConsumerConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@562384fa]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.1.jar:7.0.1]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-7.0.1.jar:7.0.1]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$0(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-7.0.1.jar:7.0.1]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1724) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:683) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:655) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1699) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:632) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:604) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:589) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanDefinitionsForType(OnBeanCondition.java:331) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:323) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:221) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.evaluateConditionalOnMissingBean(OnBeanCondition.java:204) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:149) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/apache/kafka/common/errors/SerializationException
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.1.jar:7.0.1]
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.kafka.common.errors.SerializationException
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.0.jar:4.0.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 41 common frames omitted
+
+2026-04-24T14:17:07.770+05:30  INFO 25570 --- [coursivo-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-24T14:17:07.776+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Member consumer-notification-group-1-0e67281e-6c74-4a06-af1f-1eb36ac9fb86 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) due to the consumer unsubscribed from all topics
+2026-04-24T14:17:07.778+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T14:17:07.778+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T14:17:07.778+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Unsubscribed all topics or patterns and assigned partitions
+2026-04-24T14:17:07.782+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T14:17:07.782+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-1, groupId=notification-group] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T14:17:09.903+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T14:17:09.904+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T14:17:09.904+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-04-24T14:17:09.904+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T14:17:09.907+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-notification-group-1 unregistered
+2026-04-24T14:17:09.908+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: Consumer stopped
+2026-04-24T14:17:09.909+05:30  INFO 25570 --- [coursivo-backend] [Thread-9] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-24T14:17:11.917+05:30  INFO 25570 --- [coursivo-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-24T14:17:11.917+05:30 ERROR 25570 --- [coursivo-backend] [http-nio-8080-Acceptor] org.apache.tomcat.util.net.Acceptor      : Socket accept failed
+
+java.nio.channels.AsynchronousCloseException: null
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:218) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.end(ServerSocketChannelImpl.java:374) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:399) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:532) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:71) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:127) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-04-24T14:17:11.922+05:30  INFO 25570 --- [coursivo-backend] [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T14:17:11.924+05:30  INFO 25570 --- [coursivo-backend] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2026-04-24T14:17:12.980+05:30  INFO 25570 --- [coursivo-backend] [Thread-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2026-04-24T14:17:13.055+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Starting CoursivoBackendApplication using Java 25.0.1 with PID 25570 (/Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend/target/classes started by sambhunathsahoo in /Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend)
+2026-04-24T14:17:13.056+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-24T14:17:13.122+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-24T14:17:13.131+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 4 JPA repository interfaces.
+2026-04-24T14:17:13.207+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-24T14:17:13.208+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-24T14:17:13.208+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-04-24T14:17:13.215+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 158 ms
+2026-04-24T14:17:13.250+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-24T14:17:13.262+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-24T14:17:13.262+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2026-04-24T14:17:14.201+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@48f851c2
+2026-04-24T14:17:14.201+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2026-04-24T14:17:14.813+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-tiny-math-a1ln08p6.ap-southeast-1.aws.neon.tech/coursivo?sslmode=require&channelBinding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: coursivo/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-24T14:17:14.871+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-24T14:17:18.628+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T14:17:18.767+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-04-24T14:17:18.942+05:30  WARN 25570 --- [coursivo-backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-24T14:17:19.098+05:30  WARN 25570 --- [coursivo-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-04-24T14:17:19.128+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-24T14:17:19.129+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class com.coursivo.coursivo_backend.config.KafkaConsumerConfig$$Lambda/0x000007c0013dc800
+
+2026-04-24T14:17:19.129+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T14:17:19.131+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T14:17:19.131+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T14:17:19.131+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777020439131
+2026-04-24T14:17:19.131+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Subscribed to topic(s): course.enrollment.events
+2026-04-24T14:17:19.132+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Started CoursivoBackendApplication in 6.087 seconds (process running for 435.357)
+2026-04-24T14:17:19.132+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-04-24T14:17:19.138+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T14:17:19.139+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false)
+2026-04-24T14:17:19.139+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] (Re-)joining group
+2026-04-24T14:17:19.144+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-2-6eaadf78-3daf-4b39-883f-278dc1b775e2
+2026-04-24T14:17:19.144+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] (Re-)joining group
+2026-04-24T14:17:22.153+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-notification-group-2-6eaadf78-3daf-4b39-883f-278dc1b775e2', protocol='range'}
+2026-04-24T14:17:22.163+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Finished assignment for group at generation 3: {consumer-notification-group-2-6eaadf78-3daf-4b39-883f-278dc1b775e2=Assignment(partitions=[course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2])}
+2026-04-24T14:17:22.180+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-notification-group-2-6eaadf78-3daf-4b39-883f-278dc1b775e2', protocol='range'}
+2026-04-24T14:17:22.181+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Notifying assignor about the new Assignment(partitions=[course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2])
+2026-04-24T14:17:22.183+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Adding newly assigned partitions: [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T14:17:22.203+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Found no committed offset for partition course.enrollment.events-1
+2026-04-24T14:17:22.203+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Found no committed offset for partition course.enrollment.events-0
+2026-04-24T14:17:22.203+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Found no committed offset for partition course.enrollment.events-2
+2026-04-24T14:17:22.217+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Resetting offset for partition course.enrollment.events-1 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+2026-04-24T14:17:22.217+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Resetting offset for partition course.enrollment.events-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+2026-04-24T14:17:22.218+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Resetting offset for partition course.enrollment.events-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+2026-04-24T14:17:22.218+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: partitions assigned: [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T14:17:22.261+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.kafka.NotificationConsumer         : Received EnrollmentEvent: enrollmentId=12, student=vishalstu@yopmail.com, course=Introduction to Programming with Python
+2026-04-24T14:17:22.285+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : Attempting to send email to vishalstu@yopmail.com via SendGrid...
+2026-04-24T14:17:23.629+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : SendGrid response — Status: 202, Body: 
+2026-04-24T14:17:23.629+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : ✅ Email sent successfully to vishalstu@yopmail.com
+2026-04-24T14:17:23.630+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : Attempting to send email to instructor5@example.com via SendGrid...
+2026-04-24T14:17:24.177+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : SendGrid response — Status: 202, Body: 
+2026-04-24T14:17:24.177+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : ✅ Email sent successfully to instructor5@example.com
+2026-04-24T14:17:24.177+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.kafka.NotificationConsumer         : Email notifications sent for enrollmentId=12
+2026-04-24T14:17:35.698+05:30  INFO 25570 --- [coursivo-backend] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2026-04-24T14:17:35.700+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Revoke previously assigned partitions [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T14:17:35.701+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: partitions revoked: [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T14:17:35.702+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Member consumer-notification-group-2-6eaadf78-3daf-4b39-883f-278dc1b775e2 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false) due to the consumer unsubscribed from all topics
+2026-04-24T14:17:35.702+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T14:17:35.702+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T14:17:35.702+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Unsubscribed all topics or patterns and assigned partitions
+2026-04-24T14:17:35.703+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-04-24T14:17:35.703+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-2, groupId=notification-group] Request joining group due to: consumer pro-actively leaving the group
+2026-04-24T14:17:35.887+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-04-24T14:17:35.887+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-04-24T14:17:35.887+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-04-24T14:17:35.888+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-04-24T14:17:35.891+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-notification-group-2 unregistered
+2026-04-24T14:17:35.891+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: Consumer stopped
+2026-04-24T14:17:35.892+05:30  INFO 25570 --- [coursivo-backend] [Thread-13] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-04-24T14:17:36.619+05:30  INFO 12050 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Starting CoursivoBackendApplication using Java 25.0.1 with PID 12050 (/Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend/target/classes started by sambhunathsahoo in /Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend)
+2026-04-24T14:17:36.619+05:30  INFO 12050 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-24T14:17:36.688+05:30  WARN 12050 --- [coursivo-backend] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+2026-04-24T14:17:36.688+05:30  INFO 12050 --- [coursivo-backend] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-04-24T14:17:36.689+05:30 ERROR 12050 --- [coursivo-backend] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:100) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:196) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:148) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:124) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:454) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:306) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:784) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:602) ~[spring-context-7.0.1.jar:7.0.1]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:765) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:454) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1374) ~[spring-boot-4.0.0.jar:4.0.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-4.0.0.jar:4.0.0]
+	at com.coursivo.coursivo_backend.CoursivoBackendApplication.main(CoursivoBackendApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52) ~[spring-boot-devtools-4.0.0.jar:4.0.0]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.coursivo.coursivo_backend.config.KafkaConsumerConfig] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@1671dca4]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-7.0.1.jar:7.0.1]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:360) ~[spring-core-7.0.1.jar:7.0.1]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:417) ~[spring-core-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$0(AbstractAutowireCapableBeanFactory.java:750) ~[spring-beans-7.0.1.jar:7.0.1]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1724) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:749) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:683) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:655) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1699) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:632) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:604) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:589) ~[spring-beans-7.0.1.jar:7.0.1]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanDefinitionsForType(OnBeanCondition.java:331) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanDefinitionsForType(OnBeanCondition.java:323) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:221) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.evaluateConditionalOnMissingBean(OnBeanCondition.java:204) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:149) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-4.0.0.jar:4.0.0]
+	... 20 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/apache/kafka/common/errors/SerializationException
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3010) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2329) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-7.0.1.jar:7.0.1]
+	... 37 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.apache.kafka.common.errors.SerializationException
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:580) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:547) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:123) ~[spring-boot-devtools-4.0.0.jar:4.0.0]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:490) ~[na:na]
+	... 41 common frames omitted
+
+2026-04-24T14:17:37.898+05:30  INFO 25570 --- [coursivo-backend] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-04-24T14:17:37.898+05:30 ERROR 25570 --- [coursivo-backend] [http-nio-8080-Acceptor] org.apache.tomcat.util.net.Acceptor      : Socket accept failed
+
+java.nio.channels.AsynchronousCloseException: null
+	at java.base/java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:218) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.end(ServerSocketChannelImpl.java:374) ~[na:na]
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:399) ~[na:na]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:532) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:71) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:127) ~[tomcat-embed-core-11.0.14.jar:11.0.14]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[na:na]
+
+2026-04-24T14:17:37.901+05:30  INFO 25570 --- [coursivo-backend] [Thread-13] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T14:17:37.902+05:30  INFO 25570 --- [coursivo-backend] [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2026-04-24T14:17:38.951+05:30  INFO 25570 --- [coursivo-backend] [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2026-04-24T14:17:39.031+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Starting CoursivoBackendApplication using Java 25.0.1 with PID 25570 (/Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend/target/classes started by sambhunathsahoo in /Users/sambhunathsahoo/Documents/repositories/fullstack/coursivo/coursivo-backend)
+2026-04-24T14:17:39.031+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-04-24T14:17:39.093+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-24T14:17:39.100+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 4 JPA repository interfaces.
+2026-04-24T14:17:39.174+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-04-24T14:17:39.174+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-04-24T14:17:39.174+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.14]
+2026-04-24T14:17:39.184+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 152 ms
+2026-04-24T14:17:39.220+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-24T14:17:39.232+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-24T14:17:39.232+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2026-04-24T14:17:40.234+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@320e1f38
+2026-04-24T14:17:40.234+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2026-04-24T14:17:40.904+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://ep-tiny-math-a1ln08p6.ap-southeast-1.aws.neon.tech/coursivo?sslmode=require&channelBinding=require]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 17.8
+	Default catalog/schema: coursivo/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DatasourceConnectionProviderImpl
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-04-24T14:17:40.968+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-24T14:17:44.740+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-24T14:17:44.882+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2026-04-24T14:17:44.985+05:30  WARN 25570 --- [coursivo-backend] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-24T14:17:45.247+05:30  WARN 25570 --- [coursivo-backend] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2026-04-24T14:17:45.289+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-04-24T14:17:45.290+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.kafka.common.config.AbstractConfig   : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-notification-group-3
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = notification-group
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	share.acknowledgement.mode = implicit
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class com.coursivo.coursivo_backend.config.KafkaConsumerConfig$$Lambda/0x000007c001cdfa18
+
+2026-04-24T14:17:45.290+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T14:17:45.292+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T14:17:45.292+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T14:17:45.292+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777020465292
+2026-04-24T14:17:45.293+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Subscribed to topic(s): course.enrollment.events
+2026-04-24T14:17:45.294+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] c.c.c.CoursivoBackendApplication         : Started CoursivoBackendApplication in 6.275 seconds (process running for 461.519)
+2026-04-24T14:17:45.295+05:30  INFO 25570 --- [coursivo-backend] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-04-24T14:17:45.305+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T14:17:45.306+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null isFenced: false)
+2026-04-24T14:17:45.307+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] (Re-)joining group
+2026-04-24T14:17:45.313+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Request joining group due to: need to re-join with the given member-id: consumer-notification-group-3-9c0703f8-325d-4ad4-952c-7f69b5db8f25
+2026-04-24T14:17:45.313+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] (Re-)joining group
+2026-04-24T14:17:46.211+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-24T14:17:46.212+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-04-24T14:17:46.223+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2026-04-24T14:17:46.229+05:30  WARN 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/api/health' (previous null). Performing CorsConfiguration lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-04-24T14:17:48.323+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Successfully joined group with generation Generation{generationId=5, memberId='consumer-notification-group-3-9c0703f8-325d-4ad4-952c-7f69b5db8f25', protocol='range'}
+2026-04-24T14:17:48.324+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Finished assignment for group at generation 5: {consumer-notification-group-3-9c0703f8-325d-4ad4-952c-7f69b5db8f25=Assignment(partitions=[course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2])}
+2026-04-24T14:17:48.339+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Successfully synced group in generation Generation{generationId=5, memberId='consumer-notification-group-3-9c0703f8-325d-4ad4-952c-7f69b5db8f25', protocol='range'}
+2026-04-24T14:17:48.340+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Notifying assignor about the new Assignment(partitions=[course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2])
+2026-04-24T14:17:48.340+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Adding newly assigned partitions: [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T14:17:48.345+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Found no committed offset for partition course.enrollment.events-0
+2026-04-24T14:17:48.345+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Found no committed offset for partition course.enrollment.events-2
+2026-04-24T14:17:48.346+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition course.enrollment.events-1 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}
+2026-04-24T14:17:48.359+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Resetting offset for partition course.enrollment.events-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+2026-04-24T14:17:48.360+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-notification-group-3, groupId=notification-group] Resetting offset for partition course.enrollment.events-2 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null isFenced: false)], epoch=0}}.
+2026-04-24T14:17:48.360+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : notification-group: partitions assigned: [course.enrollment.events-0, course.enrollment.events-1, course.enrollment.events-2]
+2026-04-24T14:18:00.830+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.a.kafka.common.config.AbstractConfig   : ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = coursivo-backend-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 5
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.rebootstrap.trigger.ms = 300000
+	metadata.recovery.strategy = rebootstrap
+	metric.reporters = [org.apache.kafka.common.metrics.JmxReporter]
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 3
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.assertion.algorithm = RS256
+	sasl.oauthbearer.assertion.claim.aud = null
+	sasl.oauthbearer.assertion.claim.exp.seconds = 300
+	sasl.oauthbearer.assertion.claim.iss = null
+	sasl.oauthbearer.assertion.claim.jti.include = false
+	sasl.oauthbearer.assertion.claim.nbf.seconds = 60
+	sasl.oauthbearer.assertion.claim.sub = null
+	sasl.oauthbearer.assertion.file = null
+	sasl.oauthbearer.assertion.private.key.file = null
+	sasl.oauthbearer.assertion.private.key.passphrase = null
+	sasl.oauthbearer.assertion.template.file = null
+	sasl.oauthbearer.client.credentials.client.id = null
+	sasl.oauthbearer.client.credentials.client.secret = null
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.jwt.retriever.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtRetriever
+	sasl.oauthbearer.jwt.validator.class = class org.apache.kafka.common.security.oauthbearer.DefaultJwtValidator
+	sasl.oauthbearer.scope = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transaction.two.phase.commit.enable = false
+	transactional.id = null
+	value.serializer = class com.coursivo.coursivo_backend.config.KafkaProducerConfig$$Lambda/0x000007c001cde318
+
+2026-04-24T14:18:00.832+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-04-24T14:18:00.834+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=coursivo-backend-producer-1] Instantiated an idempotent producer.
+2026-04-24T14:18:00.838+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 4.1.1
+2026-04-24T14:18:00.839+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: be816b82d25370ce
+2026-04-24T14:18:00.839+05:30  INFO 25570 --- [coursivo-backend] [http-nio-8080-exec-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1777020480838
+2026-04-24T14:18:00.852+05:30  INFO 25570 --- [coursivo-backend] [kafka-producer-network-thread | coursivo-backend-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=coursivo-backend-producer-1] Cluster ID: C3KWQ_ofTICUsHRl3BzOJw
+2026-04-24T14:18:00.853+05:30  INFO 25570 --- [coursivo-backend] [kafka-producer-network-thread | coursivo-backend-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=coursivo-backend-producer-1] ProducerId set to 5 with epoch 0
+2026-04-24T14:18:00.875+05:30  INFO 25570 --- [coursivo-backend] [kafka-producer-network-thread | coursivo-backend-producer-1] c.c.c.kafka.EnrollmentEventProducer      : Published EnrollmentEvent: enrollmentId=1, topic=course.enrollment.events, partition=0, offset=0
+2026-04-24T14:18:00.880+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.kafka.NotificationConsumer         : Received EnrollmentEvent: enrollmentId=1, student=vishalstu@yopmail.com, course=Introduction to Programming with Python
+2026-04-24T14:18:00.881+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : Attempting to send email to vishalstu@yopmail.com via SendGrid...
+2026-04-24T14:18:01.781+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : SendGrid response — Status: 202, Body: 
+2026-04-24T14:18:01.781+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : ✅ Email sent successfully to vishalstu@yopmail.com
+2026-04-24T14:18:01.782+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : Attempting to send email to instructor5@example.com via SendGrid...
+2026-04-24T14:18:01.951+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : SendGrid response — Status: 202, Body: 
+2026-04-24T14:18:01.951+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : ✅ Email sent successfully to instructor5@example.com
+2026-04-24T14:18:01.951+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.kafka.NotificationConsumer         : Email notifications sent for enrollmentId=1
+2026-04-24T14:18:20.909+05:30  INFO 25570 --- [coursivo-backend] [kafka-producer-network-thread | coursivo-backend-producer-1] c.c.c.kafka.EnrollmentEventProducer      : Published EnrollmentEvent: enrollmentId=2, topic=course.enrollment.events, partition=2, offset=0
+2026-04-24T14:18:20.914+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.kafka.NotificationConsumer         : Received EnrollmentEvent: enrollmentId=2, student=vishalstu@yopmail.com, course=UI/UX Design with Figma: From Wireframe to Prototype
+2026-04-24T14:18:20.914+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : Attempting to send email to vishalstu@yopmail.com via SendGrid...
+2026-04-24T14:18:21.110+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : SendGrid response — Status: 202, Body: 
+2026-04-24T14:18:21.110+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : ✅ Email sent successfully to vishalstu@yopmail.com
+2026-04-24T14:18:21.111+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : Attempting to send email to instructor3@example.com via SendGrid...
+2026-04-24T14:18:21.281+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : SendGrid response — Status: 202, Body: 
+2026-04-24T14:18:21.281+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : ✅ Email sent successfully to instructor3@example.com
+2026-04-24T14:18:21.281+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.kafka.NotificationConsumer         : Email notifications sent for enrollmentId=2
+2026-04-24T14:22:12.856+05:30  INFO 25570 --- [coursivo-backend] [kafka-producer-network-thread | coursivo-backend-producer-1] c.c.c.kafka.EnrollmentEventProducer      : Published EnrollmentEvent: enrollmentId=3, topic=course.enrollment.events, partition=2, offset=1
+2026-04-24T14:22:12.864+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.kafka.NotificationConsumer         : Received EnrollmentEvent: enrollmentId=3, student=vishalstu@yopmail.com, course=Cyber Security Fundamentals
+2026-04-24T14:22:12.865+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : Attempting to send email to vishalstu@yopmail.com via SendGrid...
+2026-04-24T14:22:13.891+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : SendGrid response — Status: 202, Body: 
+2026-04-24T14:22:13.891+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : ✅ Email sent successfully to vishalstu@yopmail.com
+2026-04-24T14:22:13.892+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : Attempting to send email to instructor7@example.com via SendGrid...
+2026-04-24T14:22:14.031+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : SendGrid response — Status: 202, Body: 
+2026-04-24T14:22:14.031+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.service.SendGridEmailService       : ✅ Email sent successfully to instructor7@example.com
+2026-04-24T14:22:14.031+05:30  INFO 25570 --- [coursivo-backend] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.c.kafka.NotificationConsumer         : Email notifications sent for enrollmentId=3
