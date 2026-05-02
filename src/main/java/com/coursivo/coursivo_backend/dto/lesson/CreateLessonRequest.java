@@ -13,12 +13,6 @@ import java.math.BigDecimal;
  *
  * Used for: POST /api/instructor/courses/{courseId}/lessons
  */
-public record CreateLessonRequest(
-		@NotBlank String title,
-		String description,
-		String videoUrl,
-		String content,
-		@NotNull @Positive Integer order,
-		@Min(0) Integer durationMinutes,
-		Boolean isPreviewable) {
+public record CreateLessonRequest(@NotBlank String title, String description, String videoUrl, String content,
+		@NotNull @Positive Integer order, @Min(0) Integer durationMinutes, Boolean isPreviewable) {
 }

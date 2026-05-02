@@ -15,32 +15,31 @@ import java.util.Map;
 @RequestMapping("/api/enrollments")
 public class EnrollmentController {
 
-    private final EnrollmentService enrollmentService;
+	private final EnrollmentService enrollmentService;
 
-    public EnrollmentController(EnrollmentService enrollmentService) {
-        this.enrollmentService = enrollmentService;
-    }
+	public EnrollmentController(EnrollmentService enrollmentService) {
+		this.enrollmentService = enrollmentService;
+	}
 
-    @PostMapping("/courses/{courseId}")
-    public ResponseEntity<ApiResponse<EnrollmentResponse>> enroll(
-            @PathVariable Long courseId,
-            @AuthenticationPrincipal CustomUserDetails principal) {
-        EnrollmentResponse response = enrollmentService.enrollInCourse(courseId, principal.getUser());
-        return ResponseEntity.ok(ApiResponse.ok(response, "Successfully enrolled in course"));
-    }
+	@PostMapping("/courses/{courseId}")
+	public ResponseEntity<ApiResponse<EnrollmentResponse>> enroll(@PathVariable Long courseId,
+			@AuthenticationPrincipal CustomUserDetails principal) {
+		EnrollmentResponse response = enrollmentService.enrollInCourse(courseId, principal.getUser());
+		return ResponseEntity.ok(ApiResponse.ok(response, "Successfully enrolled in course"));
+	}
 
-    @GetMapping("/my-courses")
-    public ResponseEntity<ApiResponse<List<EnrollmentResponse>>> getMyEnrollments(
-            @AuthenticationPrincipal CustomUserDetails principal) {
-        List<EnrollmentResponse> enrollments = enrollmentService.getMyEnrollments(principal.getUser());
-        return ResponseEntity.ok(ApiResponse.ok(enrollments, "Enrollments fetched successfully"));
-    }
+	@GetMapping("/my-courses")
+	public ResponseEntity<ApiResponse<List<EnrollmentResponse>>> getMyEnrollments(
+			@AuthenticationPrincipal CustomUserDetails principal) {
+		List<EnrollmentResponse> enrollments = enrollmentService.getMyEnrollments(principal.getUser());
+		return ResponseEntity.ok(ApiResponse.ok(enrollments, "Enrollments fetched successfully"));
+	}
 
-    @GetMapping("/courses/{courseId}/check")
-    public ResponseEntity<ApiResponse<Map<String, Boolean>>> checkEnrollment(
-            @PathVariable Long courseId,
-            @AuthenticationPrincipal CustomUserDetails principal) {
-        boolean isEnrolled = enrollmentService.checkEnrollment(courseId, principal.getUser());
-        return ResponseEntity.ok(ApiResponse.ok(Map.of("isEnrolled", isEnrolled), "Enrollment status checked"));
-    }
+	@GetMapping("/courses/{courseId}/check")
+	public ResponseEntity<ApiResponse<Map<String, Boolean>>> checkEnrollment(@PathVariable Long courseId,
+			@AuthenticationPrincipal CustomUserDetails principal) {
+		boolean isEnrolled = enrollmentService.checkEnrollment(courseId, principal.getUser());
+		return ResponseEntity.ok(ApiResponse.ok(Map.of("isEnrolled", isEnrolled), "Enrollment status checked"));
+	}
+
 }

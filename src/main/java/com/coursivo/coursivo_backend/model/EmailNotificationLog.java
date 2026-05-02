@@ -9,12 +9,8 @@ import java.time.ZoneOffset;
 
 @Getter
 @Entity
-@Table(
-		name = "email_notification_log",
-		indexes = {
-				@Index(name = "idx_email_log_enrollment_id", columnList = "enrollment_id", unique = true)
-		}
-)
+@Table(name = "email_notification_log",
+		indexes = { @Index(name = "idx_email_log_enrollment_id", columnList = "enrollment_id", unique = true) })
 public class EmailNotificationLog {
 
 	@Id
@@ -32,4 +28,5 @@ public class EmailNotificationLog {
 	protected void onCreate() {
 		sentAt = OffsetDateTime.now(ZoneOffset.UTC);
 	}
+
 }

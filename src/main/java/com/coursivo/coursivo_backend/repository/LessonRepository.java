@@ -15,4 +15,5 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
 	void deleteByCourseId(Long courseId);
 
 	boolean existsByCourseIdAndOrder(Long courseId, Integer order);
+
 }

@@ -99,4 +99,5 @@ public class Lesson {
 	protected void onUpdate() {
 		this.updatedAt = LocalDateTime.now();
 	}
+
 }

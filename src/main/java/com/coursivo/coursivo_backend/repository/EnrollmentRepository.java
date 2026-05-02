@@ -11,7 +11,11 @@ import java.util.Optional;
 
 @Repository
 public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
-    List<Enrollment> findByUserOrderByEnrolledAtDesc(User user);
-    Optional<Enrollment> findByUserAndCourse(User user, Course course);
-    boolean existsByUserAndCourse(User user, Course course);
+
+	List<Enrollment> findByUserOrderByEnrolledAtDesc(User user);
+
+	Optional<Enrollment> findByUserAndCourse(User user, Course course);
+
+	boolean existsByUserAndCourse(User user, Course course);
+
 }

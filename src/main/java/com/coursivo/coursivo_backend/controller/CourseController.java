@@ -3,6 +3,7 @@ package com.coursivo.coursivo_backend.controller;
 import com.coursivo.coursivo_backend.dto.common.ApiResponse;
 import com.coursivo.coursivo_backend.dto.course.CourseResponse;
 import com.coursivo.coursivo_backend.dto.course.CreateCourseRequest;
+import com.coursivo.coursivo_backend.dto.course.UpdateCourseRequest;
 import com.coursivo.coursivo_backend.model.Course;
 import com.coursivo.coursivo_backend.security.CustomUserDetails;
 import com.coursivo.coursivo_backend.service.CourseService;
@@ -28,6 +29,7 @@ import java.util.List;
 public class CourseController {
 
 	private final CourseService courseService;
+
 	private final CurriculumService curriculumService;
 
 	public CourseController(CourseService courseService, CurriculumService curriculumService) {
@@ -71,11 +73,26 @@ public class CourseController {
 		return ResponseEntity.ok(ApiResponse.ok(courses, "Courses fetched successfully"));
 	}
 
+	@PutMapping("/instructor/courses/{id}")
+	@PreAuthorize("hasRole('INSTRUCTOR')")
+	public ResponseEntity<ApiResponse<CourseResponse>> updateCourse(@PathVariable Long id,
+			@Valid @RequestBody UpdateCourseRequest request, @AuthenticationPrincipal CustomUserDetails principal) {
+		Course updated = courseService.updateCourse(id, request, principal.getUser());
+		return ResponseEntity.ok(ApiResponse.ok(CourseResponse.from(updated), "Course updated successfully"));
+	}
+
+	@PutMapping("/instructor/courses/{id}/publish")
+	@PreAuthorize("hasRole('INSTRUCTOR')")
+	public ResponseEntity<ApiResponse<CourseResponse>> publishCourse(@PathVariable Long id,
+			@AuthenticationPrincipal CustomUserDetails principal) {
+		Course published = courseService.publishCourse(id, principal.getUser());
+		return ResponseEntity.ok(ApiResponse.ok(CourseResponse.from(published), "Course published successfully"));
+	}
+
 	@PutMapping("/instructor/courses/{id}/curriculum")
 	@PreAuthorize("hasRole('INSTRUCTOR')")
 	public ResponseEntity<ApiResponse<Void>> saveCurriculum(@PathVariable Long id,
-			@RequestBody CurriculumSaveRequest request,
-			@AuthenticationPrincipal CustomUserDetails principal) {
+			@RequestBody CurriculumSaveRequest request, @AuthenticationPrincipal CustomUserDetails principal) {
 		curriculumService.saveCurriculum(id, request, principal.getUser());
 		return ResponseEntity.ok(ApiResponse.ok(null, "Curriculum saved successfully"));
 	}

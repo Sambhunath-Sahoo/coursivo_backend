@@ -1,6 +1,7 @@
 package com.coursivo.coursivo_backend.service;
 
 import com.coursivo.coursivo_backend.dto.course.CreateCourseRequest;
+import com.coursivo.coursivo_backend.dto.course.UpdateCourseRequest;
 import com.coursivo.coursivo_backend.exception.ResourceNotFoundException;
 import com.coursivo.coursivo_backend.model.Course;
 import com.coursivo.coursivo_backend.model.CourseStatus;
@@ -66,8 +67,50 @@ public class CourseService {
 	 */
 	@Transactional
 	public Course getCourseById(Long id) {
-		return courseRepository.findByIdWithLessons(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Course", id));
+		return courseRepository.findByIdWithLessons(id).orElseThrow(() -> new ResourceNotFoundException("Course", id));
+	}
+
+	@Transactional
+	public Course updateCourse(Long courseId, UpdateCourseRequest request, User instructor) {
+		Course course = courseRepository.findById(courseId)
+			.orElseThrow(() -> new ResourceNotFoundException("Course", courseId));
+
+		if (!course.getInstructor().getId().equals(instructor.getId())) {
+			throw new AccessDeniedException("You are not authorized to update this course.");
+		}
+
+		BigDecimal requestedPrice = request.price();
+		boolean isFree = (requestedPrice == null) || (requestedPrice.compareTo(BigDecimal.ZERO) == 0);
+		BigDecimal finalPrice = isFree ? BigDecimal.ZERO : requestedPrice;
+
+		course.setTitle(request.title().trim());
+		course.setDescription(request.description());
+		course.setPrice(finalPrice);
+		course.setIsFree(isFree);
+		course.setThumbnailUrl(request.thumbnailUrl());
+
+		return courseRepository.save(course);
+	}
+
+	@Transactional
+	public Course publishCourse(Long courseId, User instructor) {
+		Course course = courseRepository.findByIdWithLessons(courseId)
+			.orElseThrow(() -> new ResourceNotFoundException("Course", courseId));
+
+		if (!course.getInstructor().getId().equals(instructor.getId())) {
+			throw new AccessDeniedException("You are not authorized to publish this course.");
+		}
+
+		if (course.getSections().isEmpty()) {
+			throw new IllegalArgumentException("Course must have at least one section before publishing.");
+		}
+
+		if (course.getLessons().isEmpty()) {
+			throw new IllegalArgumentException("Course must have at least one lesson before publishing.");
+		}
+
+		course.setStatus(CourseStatus.PUBLISHED);
+		return courseRepository.save(course);
 	}
 
 }

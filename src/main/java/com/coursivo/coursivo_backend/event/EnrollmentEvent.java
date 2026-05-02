@@ -13,13 +13,22 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class EnrollmentEvent {
 
-    private Long enrollmentId;
-    private Long studentId;
-    private String studentEmail;
-    private String studentName;
-    private Long courseId;
-    private String courseTitle;
-    private String instructorEmail;
-    private String instructorName;
-    private LocalDateTime enrolledAt;
+	private Long enrollmentId;
+
+	private Long studentId;
+
+	private String studentEmail;
+
+	private String studentName;
+
+	private Long courseId;
+
+	private String courseTitle;
+
+	private String instructorEmail;
+
+	private String instructorName;
+
+	private LocalDateTime enrolledAt;
+
 }

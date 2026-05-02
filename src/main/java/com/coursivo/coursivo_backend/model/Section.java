@@ -2,62 +2,66 @@ package com.coursivo.coursivo_backend.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.BatchSize;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "sections")
+@Table(name = "sections", indexes = { @Index(name = "idx_sections_course_id", columnList = "course_id") })
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class Section {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "course_id", nullable = false)
-    private Course course;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    @Column(nullable = false, length = 255)
-    private String title;
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "course_id", nullable = false)
+	private Course course;
 
-    @Column(name = "section_order", nullable = false)
-    private Integer order;
+	@Column(nullable = false, length = 255)
+	private String title;
 
-    @OneToMany(mappedBy = "section", cascade = CascadeType.ALL, orphanRemoval = true)
-    @Builder.Default
-    private List<Lesson> lessons = new ArrayList<>();
+	@Column(name = "section_order", nullable = false)
+	private Integer order;
 
-    @Column(name = "created_at", nullable = false)
-    private LocalDateTime createdAt;
+	@OneToMany(mappedBy = "section", cascade = CascadeType.ALL, orphanRemoval = true)
+	@BatchSize(size = 50)
+	@Builder.Default
+	private List<Lesson> lessons = new ArrayList<>();
 
-    @Column(name = "updated_at", nullable = false)
-    private LocalDateTime updatedAt;
+	@Column(name = "created_at", nullable = false)
+	private LocalDateTime createdAt;
 
-    @PrePersist
-    protected void onCreate() {
-        LocalDateTime now = LocalDateTime.now();
-        this.createdAt = now;
-        this.updatedAt = now;
-    }
+	@Column(name = "updated_at", nullable = false)
+	private LocalDateTime updatedAt;
 
-    @PreUpdate
-    protected void onUpdate() {
-        this.updatedAt = LocalDateTime.now();
-    }
+	@PrePersist
+	protected void onCreate() {
+		LocalDateTime now = LocalDateTime.now();
+		this.createdAt = now;
+		this.updatedAt = now;
+	}
 
-    public void addLesson(Lesson lesson) {
-        lessons.add(lesson);
-        lesson.setSection(this);
-    }
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = LocalDateTime.now();
+	}
 
-    public void removeLesson(Lesson lesson) {
-        lessons.remove(lesson);
-        lesson.setSection(null);
-    }
+	public void addLesson(Lesson lesson) {
+		lessons.add(lesson);
+		lesson.setSection(this);
+	}
+
+	public void removeLesson(Lesson lesson) {
+		lessons.remove(lesson);
+		lesson.setSection(null);
+	}
+
 }

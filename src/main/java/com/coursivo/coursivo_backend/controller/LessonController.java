@@ -25,54 +25,47 @@ public class LessonController {
 	}
 
 	/**
-	 * POST /api/instructor/courses/{courseId}/lessons
-	 * Create a new lesson for a course. Requires INSTRUCTOR role and must be the course
-	 * instructor.
+	 * POST /api/instructor/courses/{courseId}/lessons Create a new lesson for a course.
+	 * Requires INSTRUCTOR role and must be the course instructor.
 	 */
 	@PostMapping
 	@PreAuthorize("hasRole('INSTRUCTOR')")
-	public ResponseEntity<ApiResponse<LessonResponse>> createLesson(
-			@PathVariable Long courseId,
-			@Valid @RequestBody CreateLessonRequest request,
-			@AuthenticationPrincipal CustomUserDetails principal) {
+	public ResponseEntity<ApiResponse<LessonResponse>> createLesson(@PathVariable Long courseId,
+			@Valid @RequestBody CreateLessonRequest request, @AuthenticationPrincipal CustomUserDetails principal) {
 
 		LessonResponse lesson = lessonService.createLesson(courseId, request, principal.getUser());
 		return ResponseEntity.ok(ApiResponse.ok(lesson, "Lesson created successfully"));
 	}
 
 	/**
-	 * GET /api/instructor/courses/{courseId}/lessons
-	 * Get all lessons for a course (ordered by lesson order). Public endpoint.
+	 * GET /api/instructor/courses/{courseId}/lessons Get all lessons for a course
+	 * (ordered by lesson order). Public endpoint.
 	 */
 	@GetMapping
-	public ResponseEntity<ApiResponse<List<LessonResponse>>> getLessonsByCourse(
-			@PathVariable Long courseId) {
+	public ResponseEntity<ApiResponse<List<LessonResponse>>> getLessonsByCourse(@PathVariable Long courseId) {
 		List<LessonResponse> lessons = lessonService.getLessonsByCourse(courseId);
 		return ResponseEntity.ok(ApiResponse.ok(lessons, "Lessons fetched successfully"));
 	}
 
 	/**
-	 * GET /api/instructor/courses/{courseId}/lessons/{lessonId}
-	 * Get a single lesson by ID. Public endpoint.
+	 * GET /api/instructor/courses/{courseId}/lessons/{lessonId} Get a single lesson by
+	 * ID. Public endpoint.
 	 */
 	@GetMapping("/{lessonId}")
-	public ResponseEntity<ApiResponse<LessonResponse>> getLessonById(
-			@PathVariable Long courseId,
+	public ResponseEntity<ApiResponse<LessonResponse>> getLessonById(@PathVariable Long courseId,
 			@PathVariable Long lessonId) {
 		LessonResponse lesson = lessonService.getLessonById(lessonId);
 		return ResponseEntity.ok(ApiResponse.ok(lesson, "Lesson fetched successfully"));
 	}
 
 	/**
-	 * PUT /api/instructor/courses/{courseId}/lessons/{lessonId}
-	 * Update a lesson. Requires INSTRUCTOR role and must be the course instructor.
+	 * PUT /api/instructor/courses/{courseId}/lessons/{lessonId} Update a lesson. Requires
+	 * INSTRUCTOR role and must be the course instructor.
 	 */
 	@PutMapping("/{lessonId}")
 	@PreAuthorize("hasRole('INSTRUCTOR')")
-	public ResponseEntity<ApiResponse<LessonResponse>> updateLesson(
-			@PathVariable Long courseId,
-			@PathVariable Long lessonId,
-			@Valid @RequestBody UpdateLessonRequest request,
+	public ResponseEntity<ApiResponse<LessonResponse>> updateLesson(@PathVariable Long courseId,
+			@PathVariable Long lessonId, @Valid @RequestBody UpdateLessonRequest request,
 			@AuthenticationPrincipal CustomUserDetails principal) {
 
 		LessonResponse lesson = lessonService.updateLesson(lessonId, request, principal.getUser());
@@ -80,14 +73,12 @@ public class LessonController {
 	}
 
 	/**
-	 * DELETE /api/instructor/courses/{courseId}/lessons/{lessonId}
-	 * Delete a lesson. Requires INSTRUCTOR role and must be the course instructor.
+	 * DELETE /api/instructor/courses/{courseId}/lessons/{lessonId} Delete a lesson.
+	 * Requires INSTRUCTOR role and must be the course instructor.
 	 */
 	@DeleteMapping("/{lessonId}")
 	@PreAuthorize("hasRole('INSTRUCTOR')")
-	public ResponseEntity<ApiResponse<Void>> deleteLesson(
-			@PathVariable Long courseId,
-			@PathVariable Long lessonId,
+	public ResponseEntity<ApiResponse<Void>> deleteLesson(@PathVariable Long courseId, @PathVariable Long lessonId,
 			@AuthenticationPrincipal CustomUserDetails principal) {
 
 		lessonService.deleteLesson(lessonId, principal.getUser());
@@ -95,10 +86,8 @@ public class LessonController {
 	}
 
 	/**
-	 * POST /api/instructor/courses/{courseId}/lessons/reorder
-	 * Reorder lessons for a course. Requires INSTRUCTOR role and must be the course
-	 * instructor.
-	 *
+	 * POST /api/instructor/courses/{courseId}/lessons/reorder Reorder lessons for a
+	 * course. Requires INSTRUCTOR role and must be the course instructor.
 	 * @param courseId the course ID
 	 * @param orderedLessonIds list of lesson IDs in the desired order
 	 * @param principal authenticated user
@@ -106,12 +95,11 @@ public class LessonController {
 	 */
 	@PostMapping("/reorder")
 	@PreAuthorize("hasRole('INSTRUCTOR')")
-	public ResponseEntity<ApiResponse<Void>> reorderLessons(
-			@PathVariable Long courseId,
-			@RequestBody List<Long> orderedLessonIds,
-			@AuthenticationPrincipal CustomUserDetails principal) {
+	public ResponseEntity<ApiResponse<Void>> reorderLessons(@PathVariable Long courseId,
+			@RequestBody List<Long> orderedLessonIds, @AuthenticationPrincipal CustomUserDetails principal) {
 
 		lessonService.reorderLessons(courseId, orderedLessonIds, principal.getUser());
 		return ResponseEntity.ok(ApiResponse.ok(null, "Lessons reordered successfully"));
 	}
+
 }

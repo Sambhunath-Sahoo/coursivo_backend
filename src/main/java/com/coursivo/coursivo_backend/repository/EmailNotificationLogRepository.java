@@ -19,4 +19,5 @@ public interface EmailNotificationLogRepository extends JpaRepository<EmailNotif
 			ON CONFLICT (enrollment_id) DO NOTHING
 			""", nativeQuery = true)
 	int insertIfAbsent(@Param("enrollmentId") Long enrollmentId);
+
 }

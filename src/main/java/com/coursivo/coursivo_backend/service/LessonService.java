@@ -19,6 +19,7 @@ import java.util.List;
 public class LessonService {
 
 	private final LessonRepository lessonRepository;
+
 	private final CourseRepository courseRepository;
 
 	public LessonService(LessonRepository lessonRepository, CourseRepository courseRepository) {
@@ -31,7 +32,7 @@ public class LessonService {
 	 */
 	public LessonResponse createLesson(Long courseId, CreateLessonRequest request, User instructor) {
 		Course course = courseRepository.findById(courseId)
-				.orElseThrow(() -> new ResourceNotFoundException("Course", courseId));
+			.orElseThrow(() -> new ResourceNotFoundException("Course", courseId));
 
 		if (course.getInstructor().getId() != instructor.getId()) {
 			throw new AccessDeniedException("Only the course instructor can add lessons.");
@@ -39,19 +40,20 @@ public class LessonService {
 
 		// Check if order is already taken for this course
 		if (lessonRepository.existsByCourseIdAndOrder(courseId, request.order())) {
-			throw new IllegalArgumentException("Lesson order " + request.order() + " is already taken for this course.");
+			throw new IllegalArgumentException(
+					"Lesson order " + request.order() + " is already taken for this course.");
 		}
 
 		Lesson lesson = Lesson.builder()
-				.title(request.title().trim())
-				.description(request.description())
-				.videoUrl(request.videoUrl())
-				.content(request.content())
-				.order(request.order())
-				.durationMinutes(request.durationMinutes())
-				.isPreviewable(request.isPreviewable() != null ? request.isPreviewable() : false)
-				.course(course)
-				.build();
+			.title(request.title().trim())
+			.description(request.description())
+			.videoUrl(request.videoUrl())
+			.content(request.content())
+			.order(request.order())
+			.durationMinutes(request.durationMinutes())
+			.isPreviewable(request.isPreviewable() != null ? request.isPreviewable() : false)
+			.course(course)
+			.build();
 
 		lesson = lessonRepository.save(lesson);
 		return LessonResponse.from(lesson);
@@ -62,12 +64,10 @@ public class LessonService {
 	 */
 	public List<LessonResponse> getLessonsByCourse(Long courseId) {
 		Course course = courseRepository.findById(courseId)
-				.orElseThrow(() -> new ResourceNotFoundException("Course", courseId));
+			.orElseThrow(() -> new ResourceNotFoundException("Course", courseId));
 
 		List<Lesson> lessons = lessonRepository.findByCourseIdOrderByOrderAsc(courseId);
-		return lessons.stream()
-				.map(LessonResponse::from)
-				.toList();
+		return lessons.stream().map(LessonResponse::from).toList();
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class LessonService {
 	 */
 	public LessonResponse getLessonById(Long lessonId) {
 		Lesson lesson = lessonRepository.findById(lessonId)
-				.orElseThrow(() -> new ResourceNotFoundException("Lesson", lessonId));
+			.orElseThrow(() -> new ResourceNotFoundException("Lesson", lessonId));
 
 		return LessonResponse.from(lesson);
 	}
@@ -85,7 +85,7 @@ public class LessonService {
 	 */
 	public LessonResponse updateLesson(Long lessonId, UpdateLessonRequest request, User instructor) {
 		Lesson lesson = lessonRepository.findById(lessonId)
-				.orElseThrow(() -> new ResourceNotFoundException("Lesson", lessonId));
+			.orElseThrow(() -> new ResourceNotFoundException("Lesson", lessonId));
 
 		Course course = lesson.getCourse();
 		if (course.getInstructor().getId() != instructor.getId()) {
@@ -95,7 +95,8 @@ public class LessonService {
 		// If order is being changed, check if it conflicts with existing lessons
 		if (!request.order().equals(lesson.getOrder())) {
 			if (lessonRepository.existsByCourseIdAndOrder(course.getId(), request.order())) {
-				throw new IllegalArgumentException("Lesson order " + request.order() + " is already taken for this course.");
+				throw new IllegalArgumentException(
+						"Lesson order " + request.order() + " is already taken for this course.");
 			}
 		}
 
@@ -116,7 +117,7 @@ public class LessonService {
 	 */
 	public void deleteLesson(Long lessonId, User instructor) {
 		Lesson lesson = lessonRepository.findById(lessonId)
-				.orElseThrow(() -> new ResourceNotFoundException("Lesson", lessonId));
+			.orElseThrow(() -> new ResourceNotFoundException("Lesson", lessonId));
 
 		Course course = lesson.getCourse();
 		if (course.getInstructor().getId() != instructor.getId()) {
@@ -127,16 +128,16 @@ public class LessonService {
 	}
 
 	/**
-	 * Reorder lessons for a course. Updates the order of multiple lessons at once.
-	 * Only the course instructor can reorder lessons.
-	 *
+	 * Reorder lessons for a course. Updates the order of multiple lessons at once. Only
+	 * the course instructor can reorder lessons.
 	 * @param courseId the course ID
-	 * @param orderedLessonIds list of lesson IDs in the desired order (1-indexed position)
+	 * @param orderedLessonIds list of lesson IDs in the desired order (1-indexed
+	 * position)
 	 * @param instructor the requesting user (must be the course instructor)
 	 */
 	public void reorderLessons(Long courseId, List<Long> orderedLessonIds, User instructor) {
 		Course course = courseRepository.findById(courseId)
-				.orElseThrow(() -> new ResourceNotFoundException("Course", courseId));
+			.orElseThrow(() -> new ResourceNotFoundException("Course", courseId));
 
 		if (course.getInstructor().getId() != instructor.getId()) {
 			throw new AccessDeniedException("Only the course instructor can reorder lessons.");
@@ -154,9 +155,10 @@ public class LessonService {
 		for (int i = 0; i < orderedLessonIds.size(); i++) {
 			Long lessonId = orderedLessonIds.get(i);
 			Lesson lesson = lessonRepository.findById(lessonId)
-					.orElseThrow(() -> new ResourceNotFoundException("Lesson", lessonId));
+				.orElseThrow(() -> new ResourceNotFoundException("Lesson", lessonId));
 			lesson.setOrder(i + 1); // 1-indexed order
 			lessonRepository.save(lesson);
 		}
 	}
+
 }

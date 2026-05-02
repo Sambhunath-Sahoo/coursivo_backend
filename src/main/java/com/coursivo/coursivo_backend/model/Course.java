@@ -30,7 +30,8 @@ import java.util.List;
 @Entity
 @Table(name = "courses",
 		indexes = { @Index(name = "idx_courses_instructor_id", columnList = "instructor_id"),
-				@Index(name = "idx_courses_status", columnList = "status") })
+				@Index(name = "idx_courses_status", columnList = "status"),
+				@Index(name = "idx_courses_status_created_at", columnList = "status, created_at") })
 @Getter
 @Setter
 @NoArgsConstructor
@@ -154,4 +155,5 @@ public class Course {
 		lessons.forEach(lesson -> lesson.setCourse(null));
 		lessons.clear();
 	}
+
 }
