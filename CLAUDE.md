@@ -5,8 +5,9 @@ Spring Boot 4.0 REST API for Coursivo — an EdTech platform for educators to se
 ## Tech Stack
 
 - **Java 21** + **Spring Boot 4.0**
-- **Spring Security** + **JWT** (JJWT 0.12.6) — stateless authentication
+- **Spring Security** + **JWT** (JJWT) — stateless authentication
 - **Spring Data JPA** + **PostgreSQL** (Neon in production)
+- **SendGrid** for email notifications
 - **Lombok** for boilerplate reduction
 - **Maven** for build management
 - **Bean Validation** for request validation
