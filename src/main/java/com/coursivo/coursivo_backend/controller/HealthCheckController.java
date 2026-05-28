@@ -23,6 +23,7 @@ public class HealthCheckController {
 		healthData.put("version", "1.0.0");
 		healthData.put("api", "v1");
 		healthData.put("environment", "default");
+		healthData.put("live", true);
 
 		return ResponseEntity.ok(ApiResponse.ok(healthData, "Service is healthy"));
 	}
