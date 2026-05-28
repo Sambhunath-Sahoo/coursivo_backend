@@ -21,6 +21,10 @@ public class HealthCheckController {
 		healthData.put("timestamp", LocalDateTime.now());
 		healthData.put("service", "Coursivo Backend API");
 		healthData.put("version", "1.0.0");
+		healthData.put("api", "v1");
+		healthData.put("environment", "default");
+		healthData.put("live", true);
+		healthData.put("ready", true);
 
 		return ResponseEntity.ok(ApiResponse.ok(healthData, "Service is healthy"));
 	}
