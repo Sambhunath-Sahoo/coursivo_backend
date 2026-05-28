@@ -3,6 +3,9 @@ name: CI
 on:
   push:
     branches: [main, master]
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+"
+      - "v[0-9]+.[0-9]+.[0-9]+-*"
   pull_request:
     branches: [main, master]
 
@@ -11,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
   packages: write
 
 env:
@@ -26,6 +29,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
+      - name: Make Maven wrapper executable
+        run: chmod +x mvnw
+
+      - name: Resolve release version
+        id: release
+        run: |
+          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
+            VERSION="${GITHUB_REF#refs/tags/v}"
+            echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+            echo "is_release=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "is_release=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Verify pom.xml matches release tag
+        if: steps.release.outputs.is_release == 'true'
+        run: |
+          TAG_VERSION="${{ steps.release.outputs.version }}"
+          POM_VERSION=$(./mvnw -q -DforceStdout help:evaluate -Dexpression=project.version)
+          POM_BASE="${POM_VERSION%-SNAPSHOT}"
+          if [ "${POM_BASE}" != "${TAG_VERSION}" ]; then
+            echo "pom.xml version (${POM_VERSION}) must match tag v${TAG_VERSION}"
+            echo "Update <version> in pom.xml, commit, then tag v${TAG_VERSION}"
+            exit 1
+          fi
+
       - name: Set up JDK 21
         uses: actions/setup-java@v5
         with:
@@ -34,7 +63,7 @@ jobs:
           cache: maven
 
       - name: Spring Java Format
-        run: chmod +x mvnw && ./mvnw -B spring-javaformat:validate
+        run: ./mvnw -B spring-javaformat:validate
 
       - name: Checkstyle
         run: ./mvnw -B checkstyle:check
@@ -43,7 +72,7 @@ jobs:
         run: ./mvnw -B clean package -DskipTests
 
       - name: Upload JAR
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || steps.release.outputs.is_release == 'true')
         uses: actions/upload-artifact@v7
         with:
           name: coursivo-backend-jar
@@ -54,7 +83,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Log in to GHCR
-        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || steps.release.outputs.is_release == 'true')
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
@@ -67,15 +96,27 @@ jobs:
         with:
           images: ${{ env.IMAGE_NAME }}
           tags: |
-            type=sha,prefix=
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=sha,prefix=,enable=${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' }}
             type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' }}
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
           context: .
-          push: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') }}
+          push: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || steps.release.outputs.is_release == 'true') }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Create GitHub Release
+        if: steps.release.outputs.is_release == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          name: v${{ steps.release.outputs.version }}
+          tag_name: ${{ github.ref_name }}
+          files: target/*.jar
+          generate_release_notes: true
