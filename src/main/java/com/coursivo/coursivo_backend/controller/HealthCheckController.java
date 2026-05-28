@@ -24,6 +24,7 @@ public class HealthCheckController {
 		healthData.put("api", "v1");
 		healthData.put("environment", "default");
 		healthData.put("live", true);
+		healthData.put("ready", true);
 
 		return ResponseEntity.ok(ApiResponse.ok(healthData, "Service is healthy"));
 	}
