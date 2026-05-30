@@ -49,9 +49,15 @@ jobs:
         with:
           node-version: "22"
           cache: npm
+          cache-dependency-path: package-lock.json
 
       - name: Install semantic-release
-        run: npm install
+        run: npm ci
+
+      - name: Configure git for semantic-release
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Run semantic-release
         uses: cycjimmy/semantic-release-action@v4
