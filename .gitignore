@@ -42,6 +42,9 @@ logs/application.log
 src/main/resources/application.properties
 documents
 
+### Node (semantic-release only) ###
+node_modules/
+
 ### Claude Code personal files ###
 CLAUDE.local.md
 .claude/settings.local.json

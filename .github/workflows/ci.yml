@@ -24,6 +24,11 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Skip version-bump commits from semantic-release; tag builds still run below.
+    if: |
+      github.event_name == 'pull_request' ||
+      startsWith(github.ref, 'refs/tags/') ||
+      !contains(github.event.head_commit.message, '[skip ci]')
 
     steps:
       - name: Checkout
@@ -112,11 +117,10 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Create GitHub Release
+      - name: Attach JAR to GitHub Release
         if: steps.release.outputs.is_release == 'true'
         uses: softprops/action-gh-release@v2
         with:
-          name: v${{ steps.release.outputs.version }}
           tag_name: ${{ github.ref_name }}
           files: target/*.jar
-          generate_release_notes: true
+          generate_release_notes: false
