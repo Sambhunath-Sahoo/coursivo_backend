@@ -27,19 +27,6 @@
         "preset": "conventionalcommits"
       }
     ],
-    [
-      "@semantic-release/exec",
-      {
-        "prepareCmd": "./mvnw -B org.codehaus.mojo:versions-maven-plugin:2.17.1:set -DnewVersion=${nextRelease.version} -DgenerateBackupPoms=false"
-      }
-    ],
-    [
-      "@semantic-release/git",
-      {
-        "assets": ["pom.xml"],
-        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-      }
-    ],
     "@semantic-release/github"
   ]
 }

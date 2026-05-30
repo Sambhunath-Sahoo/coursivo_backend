@@ -48,24 +48,19 @@ jobs:
             echo "is_release=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Verify pom.xml matches release tag
-        if: steps.release.outputs.is_release == 'true'
-        run: |
-          TAG_VERSION="${{ steps.release.outputs.version }}"
-          POM_VERSION=$(./mvnw -q -DforceStdout help:evaluate -Dexpression=project.version)
-          POM_BASE="${POM_VERSION%-SNAPSHOT}"
-          if [ "${POM_BASE}" != "${TAG_VERSION}" ]; then
-            echo "pom.xml version (${POM_VERSION}) must match tag v${TAG_VERSION}"
-            echo "Update <version> in pom.xml, commit, then tag v${TAG_VERSION}"
-            exit 1
-          fi
-
       - name: Set up JDK 21
         uses: actions/setup-java@v5
         with:
           java-version: "21"
           distribution: temurin
           cache: maven
+
+      - name: Stamp release version from tag
+        if: steps.release.outputs.is_release == 'true'
+        run: |
+          ./mvnw -B org.codehaus.mojo:versions-maven-plugin:2.17.1:set \
+            -DnewVersion="${{ steps.release.outputs.version }}" \
+            -DgenerateBackupPoms=false
 
       - name: Spring Java Format
         run: ./mvnw -B spring-javaformat:validate
