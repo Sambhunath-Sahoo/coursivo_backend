@@ -1,0 +1,86 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version (e.g. 1.2.0 or v1.2.0)"
+        required: true
+        type: string
+  release:
+    types: [published]
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to EC2
+    runs-on: ubuntu-latest
+    # Waits for approval when environment "production" has required reviewers enabled
+    # (Settings → Environments → production). Applies to release + workflow_dispatch.
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Resolve version and image
+        id: meta
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VERSION="${{ inputs.version }}"
+          else
+            VERSION="${{ github.event.release.tag_name }}"
+          fi
+          VERSION="${VERSION#v}"
+          REPO_LC=$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]')
+          IMAGE="ghcr.io/${REPO_LC}:${VERSION}"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "image=${IMAGE}" >> "$GITHUB_OUTPUT"
+          echo "Deploying ${IMAGE}"
+
+      - name: Copy compose file to EC2
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          source: deploy/docker-compose.yml
+          target: /opt/coursivo/
+
+      - name: Deploy on EC2
+        uses: appleboy/ssh-action@v1
+        env:
+          IMAGE: ${{ steps.meta.outputs.image }}
+          GHCR_TOKEN: ${{ secrets.GHCR_PAT }}
+          GHCR_USER: ${{ github.repository_owner }}
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          envs: IMAGE,GHCR_TOKEN,GHCR_USER
+          script: |
+            set -euo pipefail
+            echo "${GHCR_TOKEN}" | docker login ghcr.io -u "${GHCR_USER}" --password-stdin
+            cd /opt/coursivo
+            if [ ! -f .env ]; then
+              echo "Missing /opt/coursivo/.env — copy deploy/.env.example and configure secrets on the server."
+              exit 1
+            fi
+            export IMAGE
+            docker compose pull
+            docker compose up -d --remove-orphans
+            echo "Waiting for health check..."
+            for i in $(seq 1 30); do
+              if curl -fsS http://127.0.0.1:8080/api/health >/dev/null; then
+                echo "Healthy."
+                docker ps --filter name=coursivo-backend
+                exit 0
+              fi
+              sleep 2
+            done
+            echo "Health check failed. Logs:"
+            docker logs coursivo-backend --tail 80
+            exit 1

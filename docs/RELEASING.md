@@ -1,5 +1,7 @@
 # Releasing (Semantic Versioning)
 
+> **Current pipeline:** automated **semantic-release** on merge to `main` (see [CICD-LEARNING-GUIDE.md](./CICD-LEARNING-GUIDE.md)). Sections below describe manual tag flow; use them only if you intentionally release without semantic-release.
+
 Versions follow [SemVer](https://semver.org/): `MAJOR.MINOR.PATCH` (e.g. `1.2.3`).
 
 ## Day-to-day development
