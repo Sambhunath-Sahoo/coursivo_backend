@@ -1,13 +1,16 @@
 package com.coursivo.coursivo_backend.controller;
 
 import com.coursivo.coursivo_backend.dto.common.ApiResponse;
+import com.coursivo.coursivo_backend.dto.common.PageResponse;
 import com.coursivo.coursivo_backend.dto.course.CourseResponse;
 import com.coursivo.coursivo_backend.dto.course.CreateCourseRequest;
 import com.coursivo.coursivo_backend.dto.course.UpdateCourseRequest;
 import com.coursivo.coursivo_backend.model.Course;
+import com.coursivo.coursivo_backend.model.DifficultyLevel;
 import com.coursivo.coursivo_backend.security.CustomUserDetails;
 import com.coursivo.coursivo_backend.service.CourseService;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -16,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PutMapping;
 
@@ -37,10 +41,24 @@ public class CourseController {
 		this.curriculumService = curriculumService;
 	}
 
+	/**
+	 * GET /api/courses
+	 *
+	 * Paginated, filterable list of published courses.
+	 *
+	 * Query params (all optional): q – keyword search in title / description difficulty –
+	 * BEGINNER | INTERMEDIATE | ADVANCED priceType – FREE | PAID | ALL (default ALL) sort
+	 * – newest (default) | price_asc | price_desc | name_asc | name_desc page – 0-indexed
+	 * page number (default 0) size – page size (default 50, max 200)
+	 */
 	@GetMapping("/courses")
-	public ResponseEntity<ApiResponse<List<CourseResponse>>> getPublishedCourses() {
-		List<CourseResponse> courses = courseService.getPublishedCourses().stream().map(CourseResponse::from).toList();
-		return ResponseEntity.ok(ApiResponse.ok(courses, "Courses fetched successfully"));
+	public ResponseEntity<ApiResponse<PageResponse<CourseResponse>>> getPublishedCourses(
+			@RequestParam(required = false) String q, @RequestParam(required = false) DifficultyLevel difficulty,
+			@RequestParam(defaultValue = "ALL") String priceType, @RequestParam(defaultValue = "newest") String sort,
+			@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "50") int size) {
+		Page<Course> coursePage = courseService.searchCourses(q, difficulty, priceType, sort, page, size);
+		PageResponse<CourseResponse> response = PageResponse.from(coursePage.map(CourseResponse::from));
+		return ResponseEntity.ok(ApiResponse.ok(response, "Courses fetched successfully"));
 	}
 
 	/**

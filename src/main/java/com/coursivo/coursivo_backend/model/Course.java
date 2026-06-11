@@ -1,6 +1,8 @@
 package com.coursivo.coursivo_backend.model;
 
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -100,6 +102,16 @@ public class Course {
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, length = 16)
 	private CourseStatus status = CourseStatus.DRAFT;
+
+	@Enumerated(EnumType.STRING)
+	@Column(name = "difficulty_level", length = 16)
+	private DifficultyLevel difficultyLevel;
+
+	@Default
+	@ElementCollection(fetch = FetchType.LAZY)
+	@CollectionTable(name = "course_tags", joinColumns = @JoinColumn(name = "course_id"))
+	@Column(name = "tag", length = 64)
+	private List<String> tags = new ArrayList<>();
 
 	@Column(name = "created_at", nullable = false)
 	private LocalDateTime createdAt;
