@@ -8,6 +8,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
 
+/**
+ * Sends both enrollment emails once an enrollment has committed.
+ *
+ * Constraint: the listener is bound to AFTER_COMMIT, so a SendGrid failure cannot roll
+ * back the enrollment — these emails are best-effort. The {@code @Async} hop depends on
+ * {@code @EnableAsync} on CoursivoBackendApplication; drop that annotation and this
+ * silently runs on the caller's thread inside the request. Despite the Kafka block still
+ * sitting in application.properties.example, there is no spring-kafka dependency — this
+ * is an in-process Spring event, not a broker, and a consumer added elsewhere will not
+ * receive it.
+ */
 @Service
 public class NotificationService {
 

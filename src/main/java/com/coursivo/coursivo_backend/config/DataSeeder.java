@@ -19,8 +19,14 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * Seeds 15 realistic published courses on first startup. Idempotent: skips seeding if the
- * courses table already has >= 15 rows.
+ * Seeds 15 demo courses and the instructor that owns them.
+ *
+ * Constraint: this runs on every startup against whatever database is configured, with no
+ * {@code @Profile} guard, and its only check is courseRepository.count() >= 15. Dropping
+ * below 15 courses — by deleting a few during manual testing, or in production —
+ * re-inserts the whole demo set on the next boot. It also creates the seed instructor
+ * with a hardcoded password. Guard this by profile before treating production course data
+ * as stable.
  */
 @Component
 public class DataSeeder implements ApplicationRunner {

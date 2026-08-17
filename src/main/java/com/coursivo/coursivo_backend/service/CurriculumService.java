@@ -15,6 +15,18 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Reconciles an entire curriculum tree in one pass. The course builder PUTs every section
+ * and lesson together, so there is no per-entity create or delete call to hang logic off.
+ *
+ * Constraint: Course owns both sections and lessons with orphanRemoval, and Section owns
+ * its lessons as well, so every lesson sits on two cascade paths. Editing lessons through
+ * LessonService updates one side only and detaches the lesson from the other, which is
+ * why curriculum edits route here instead. A DTO id that fails Long.parseLong is the
+ * signal for "created in the browser, not yet saved" — the builder sends client-generated
+ * string ids — so do not swap that check for an explicit flag without also changing what
+ * the frontend sends.
+ */
 @Service
 public class CurriculumService {
 
